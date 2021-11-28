@@ -48,14 +48,13 @@ var getNumbers = (id) => {
             document.getElementById("age-box").style.display = "none";
 
         }else if(childCount > 0){
-            console.log(childCount)
-            document.getElementById("age-box").style.display = "flex";
-            if(childCount == 1){
-                document.getElementById("age-1").style.display = "block";
-                document.getElementById("age-2").style.display = "none";
+            
+            document.getElementById("age-box").style.display = "block";
+            for(i = 1; i <= childCount; i++){
+                document.getElementById("age-"+i).style.display = "inline-block";
             }
-            else if(childCount == 2){
-                document.getElementById("age-2").style.display = "block";
+            for(i = 10; i > childCount; i--){
+                document.getElementById("age-"+i).style.display = "none";
             }
         }
 
