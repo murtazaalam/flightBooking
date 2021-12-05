@@ -240,6 +240,19 @@ body{
     margin: 0 6px 0 2px;
     font-weight: 600;
 }
+.search-hotel{
+    display: none;
+}
+.form-box{
+    background: #fff;
+    padding: 12px;
+}
+.form-box div{
+    margin-top: 12px;
+}
+.search-list{
+    width: 100%;
+}
 .detail-content{
     display: none;
     position: absolute;
@@ -296,6 +309,96 @@ body{
 .details:hover .detail-content{
     display: block;
 }
+.total-flights{
+    text-align: center;
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+.timing-aria{
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    margin: 14px 0;
+}
+.flight-aria{
+    background: #fff;
+    margin-bottom: 10px;
+}
+.dot{
+    width: 8px;
+    height: 8px;
+    background: grey;
+    border-radius: 50%;
+}
+.line-box{
+    display: flex;
+    align-items: center;
+}
+.line{
+    width: 74px;
+    height: 2px;
+    background: lightgray;
+}
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    background: #eee;
+    padding: 4px 10px;
+}
+.total-time{
+    text-align: center;
+    margin: 0 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.flight-detail{
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+.refundable{
+    font-size: 12px;
+    font-weight: 600;
+    color: #1aac41;
+}
+.luggage{
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+}
+.luggage-1{
+    margin-right: 8px;
+}
+.company-name{
+    font-size: 14px;
+}
+.main-content{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 10px;
+    flex-direction: column;
+}
+.flight-number{
+    font-size: 12px;
+    font-weight: 600;
+    color: #939393;
+}
+.time{
+    font-size: 18px;
+    font-weight: 600;
+}
+.date{
+    font-size: 11px;
+    font-weight: 600;
+    color: #b5b1b1;
+}
+.swap-2{
+    border: none;
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -327,6 +430,22 @@ input[type=number] {
 .flight-date:focus{
     outline: none;
 }
+.btn-book{
+    width: 100%;
+    border-radius: 0;
+}
+.price{
+    text-align: center;
+}
+.price-text{
+    font-size: 18px;
+    font-weight: 600;
+}
+.none-stop{
+    font-size: 12px;
+    font-weight: 600;
+    color: #1aac41;
+}
 @media screen and (min-width: 281px){
     .arc2{
         left: 64%;
@@ -344,6 +463,9 @@ input[type=number] {
     }
     .night-count{
         display: flex;
+    }
+    .line{
+        width: 120px;
     }
 }
 @media screen and (min-width: 361px){
@@ -363,6 +485,16 @@ input[type=number] {
 @media screen and (min-width: 376px){
     .detail-content{
         top: 28px;
+    }
+    .luggage{
+        font-size: 11px;
+    }
+    .flight-detail{
+        padding-right: 8px;
+        border-right: 1px solid;
+    }
+    .line{
+        width: 172px;
     }
 }
 @media screen and (min-width: 414px){
@@ -384,6 +516,9 @@ input[type=number] {
         flex-direction: row;
         justify-content: space-between;
     }
+    .line{
+        width: 224px;
+    }
 }
 @media screen and (min-width: 576px){
     .selects{
@@ -397,6 +532,27 @@ input[type=number] {
     }
     .flight-search{
         right: 7%;
+    }
+    .main-content{
+        flex-direction: row;
+        margin-top: 10px;
+    }
+    .line{
+        width: 136px;
+    }
+    .price{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 12px;
+        border-left: 1px dotted;
+    }
+    .btn-book-box{
+        width: 100%;
+    }
+    .total-flights{
+        font-size: 14px
     }
 }
 @media screen and (min-width: 992px){
@@ -448,6 +604,23 @@ input[type=number] {
     .dest{
         margin-right: 15px;
     }
+    .form-box{
+        display: flex;
+        align-items: end;
+    }
+    .form-box div{
+        margin-right: 6px;
+    }
+    .main-content{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .line{
+        width: 160px;
+    }
+    .btn-book{
+        width: 112px;
+    }
 }
 @media screen and (min-width: 1025px){
     .main-title {
@@ -491,5 +664,26 @@ input[type=number] {
     }
     .arc2{
         left: -4%;
+    }
+    .form-box{
+        justify-content: space-between;
+    }
+    .form-box div{
+        margin-right: 0;
+    }
+    .line{
+        width: 236px;
+    }
+    .btn-book{
+        width: 152px;
+    }
+    .total-time{
+        margin: 0 18px;
+    }
+    .price{
+        padding-left: 22px;
+    }
+    .total-flights{
+        font-size: 16px;
     }
 }

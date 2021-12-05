@@ -138,7 +138,7 @@
                                     <input type="text" class="airport-city" id="dest-city" value="Delhi" />
                                     <p class="text" id="dest-country">DEL, Delhi, India</p>
                                     <div class="swap">
-                                        <button class="btn-swap" onclick="swap()"><i class="fas fa-exchange-alt"></i></button>
+                                        <button class="btn-swap" onclick="swap('flight-search')"><i class="fas fa-exchange-alt"></i></button>
                                     </div>
                                     <div class="arc arc1"></div>
                                     <div class="arc arc2"></div>
@@ -276,8 +276,12 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="flight-search">
+                        <button class="flight-search" id="flight-search" type="submit">
                             <span>Search Flight</span>
+                            <span class="arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
+                        </button>
+                        <button class="flight-search search-hotel" id="hotel-search" type="submit">
+                            <span>Search Hotel</span>
                             <span class="arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
                         </button>
                     </div>
