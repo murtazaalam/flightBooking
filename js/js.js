@@ -1,3 +1,4 @@
+var detailAriaId;
 var swap = (flight) =>{
     if(flight == "flight-search"){
         var originCity = document.getElementById("origin-city").value;
@@ -107,4 +108,50 @@ var getValues = () => {
     document.getElementById("guests").value = gValue;
     document.getElementById("rooms").value = rValue;
 
+}
+var showHideDetail = (id) => {
+    //var index = id.split("-")[1];
+    detailAriaId = `${id}-detail`;
+    var displayProperty = document.getElementById(detailAriaId).getAttribute("style").split(":");
+
+    displayProperty[1].trim() == "none;" ? document.getElementById(detailAriaId).style.display = "block" : 
+                            document.getElementById(detailAriaId).style.display = "none";
+    // var detailAria = document.getElementsByClassName("detail-aria");
+    // console.log(index);
+    // for(i = 0; i < detailAria.length; i++){
+    //     if(index != (i+1)){
+    //         console.log("helo")
+    //         document.getElementById(`flight-${index}-detail`).style.display = "none";
+    //     }
+    // }
+}
+var tabChange = (id) => {
+    if(id == `${detailAriaId}-tab-1`){
+        document.getElementById(`${detailAriaId}-tab-1`).classList.add("active");
+        document.getElementById(`${detailAriaId}-tab-2`).classList.remove("active");
+        document.getElementById(`${detailAriaId}-tab-3`).classList.remove("active");
+
+        document.getElementById(`${detailAriaId}-tab-1-content`).style.display = "block";
+        document.getElementById(`${detailAriaId}-tab-2-content`).style.display = "none";
+        document.getElementById(`${detailAriaId}-tab-3-content`).style.display = "none";
+        
+    }
+    else if(id == `${detailAriaId}-tab-2`){
+        document.getElementById(`${detailAriaId}-tab-2`).classList.add("active");
+        document.getElementById(`${detailAriaId}-tab-1`).classList.remove("active");
+        document.getElementById(`${detailAriaId}-tab-3`).classList.remove("active");
+
+        document.getElementById(`${detailAriaId}-tab-2-content`).style.display = "block";
+        document.getElementById(`${detailAriaId}-tab-1-content`).style.display = "none";
+        document.getElementById(`${detailAriaId}-tab-3-content`).style.display = "none";
+    }
+    else if(id == `${detailAriaId}-tab-3`){
+        document.getElementById(`${detailAriaId}-tab-3`).classList.add("active");
+        document.getElementById(`${detailAriaId}-tab-1`).classList.remove("active");
+        document.getElementById(`${detailAriaId}-tab-2`).classList.remove("active");
+
+        document.getElementById(`${detailAriaId}-tab-3-content`).style.display = "block";
+        document.getElementById(`${detailAriaId}-tab-2-content`).style.display = "none";
+        document.getElementById(`${detailAriaId}-tab-1-content`).style.display = "none";
+    }
 }

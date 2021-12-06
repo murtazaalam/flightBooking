@@ -3,6 +3,7 @@ body{
     margin: 0;
     background-image: url(../images/bridge.jpg);
     background-repeat: no-repeat;
+    background-color: #f8f8f8;
 }
 .navbar-custom{
     background-color: transparent !important;
@@ -325,11 +326,75 @@ body{
     background: #fff;
     margin-bottom: 10px;
 }
+.filter-aria{
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.filter-aria h1{
+    font-size: 18px;
+}
+.filter-aria h5{
+    font-size: 14px;
+    color: gray;
+    font-weight: 400;
+}
+.filter-by{
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #dee2e6
+}
+.filter-by div{
+    display: inline-block;
+    border: 1px solid #bbb8b8;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+.preference div{
+    padding: 8px 0px;
+    width: 49%;
+    text-align: center;
+}
+.stop div{
+    padding: 10px 0;
+    width: 32%;
+    text-align: center;
+}
+.filter-by div:hover{
+    background-color: #e9e9e9;
+}
 .dot{
     width: 8px;
     height: 8px;
     background: grey;
     border-radius: 50%;
+}
+.flight-detail:hover{
+    color: blue;
+    text-decoration: underline;
+}
+.dep-time div{
+    padding: 8px 0px;
+    width: 49%;
+    text-align: center;
+}
+.min-value{
+    font-weight: 600;
+    margin-right: 6px;
+}
+.price-by{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+.price-by p{
+    margin: 0;
+}
+.r-icon{
+    font-size: 14px;
 }
 .line-box{
     display: flex;
@@ -446,6 +511,100 @@ input[type=number] {
     font-weight: 600;
     color: #1aac41;
 }
+.detail-aria{
+    
+}
+.detail-aria .tab-menu{
+    display: flex;
+    border-bottom: 1px solid #cdcdcd;
+}
+.detail-aria .tab-menu .icon{
+    font-size: 12px;
+    margin-right: 4px;
+}
+.detail-aria .tab-menu .txt{
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+}
+.detail-aria .tab-menu .tab-box{
+    padding: 8px;
+    cursor: pointer;
+}
+.detail-aria .tab-menu .active{
+    border-bottom: 2px solid #1382e3;
+}
+.detail-aria .d-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #cdcdcd;
+}
+.detail-aria .d-box div{
+    font-size: 10px;
+    margin: 0 4px;
+    font-weight: 600;
+}
+.detail-aria .f-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+.detail-aria .f-box p{
+    margin: 0;
+}
+.detail-aria .f-box .p-detail p{
+    font-size: 10px;
+    color: #b9b6b6;
+    font-weight: 600;
+}
+.detail-aria .f-box .des-t{
+    text-align: right;
+}
+.detail-aria .f-box .t-detail{
+    text-align: center;
+}
+.detail-aria .f-box .t-detail p{
+    font-size: 12px;
+    font-weight: 600;
+    color: #b9b6b6;
+}
+.detail-aria .f-box .r-box{
+    border: 1px solid #1aac41;
+    color: #1aac41;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 18px;
+    font-weight: 600;
+    display: none;
+}
+.b-detail{
+    padding: 8px;
+}
+.b-detail .b-top{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.b-detail .b-top p{
+    margin: 0;
+}
+.b-detail .b-top img{
+    margin-right: 10px;
+}
+.b-detail table{ 
+    margin: 0px;
+}
+.b-detail .some-txt{
+    color: #b9b6b6;
+    font-size: 12px;
+    color: #8f8c8c;
+    margin: 0;
+}
 @media screen and (min-width: 281px){
     .arc2{
         left: 64%;
@@ -466,6 +625,15 @@ input[type=number] {
     }
     .line{
         width: 120px;
+    }
+    .detail-aria .tab-menu .txt{
+        font-size: 12px;
+    }
+    .detail-aria .d-box div{
+        font-size: 12px;
+    }
+    .detail-aria .f-box .p-detail p{
+        font-size: 12px;
     }
 }
 @media screen and (min-width: 361px){
@@ -519,8 +687,25 @@ input[type=number] {
     .line{
         width: 224px;
     }
+    .detail-aria .f-box .r-box{
+        display: block;
+    }
 }
 @media screen and (min-width: 576px){
+    .price-by{
+        flex-direction: column;
+    }
+    .price-by input{
+        width: 100%;
+    }
+    .dep-time div{
+        width: 100%;
+        font-size: 9px;
+    }
+    .preference div{
+        width: 100%;
+        font-size: 9px;
+    }
     .selects{
         flex-direction: row;
     }
@@ -553,6 +738,10 @@ input[type=number] {
     }
     .total-flights{
         font-size: 14px
+    }
+    .stop div{
+        font-size: 9px;
+        width: 31%;
     }
 }
 @media screen and (min-width: 992px){
@@ -621,6 +810,15 @@ input[type=number] {
     .btn-book{
         width: 112px;
     }
+    .stop div{
+        font-size: 12px;
+    }
+    .preference div{
+        font-size: 12px;
+    }
+    .dep-time div{
+        font-size: 12px;
+    }
 }
 @media screen and (min-width: 1025px){
     .main-title {
@@ -656,6 +854,12 @@ input[type=number] {
     }
     .box{
         margin-right: 15px;
+    }
+    .price-by{
+        flex-direction: row;
+    }
+    .price-by input{
+        width: 50%;
     }
 }
 @media screen and (min-width: 1281px){

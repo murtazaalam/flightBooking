@@ -86,6 +86,61 @@
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3">
                         <div class="total-flights">Total <b>125</b> flights found</div>
+                        <div class="filter-aria">
+                            <h1>Filter Result</h1>
+                            <div>
+                                <h5>No. Of Stop</h5>
+                                <div class="filter-by stop">
+                                    <div>0 STOP</div>
+                                    <div>1 STOP</div>
+                                    <div>1+ STOP</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5>Preference</h5>
+                                <div class="filter-by preference">
+                                    <div>REFUNDABLE</div>
+                                    <div>NON REFUNDABLE</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5>Departure Time</h5>
+                                <div class="filter-by dep-time">
+                                    <div>Before 6AM</div>
+                                    <div>6AM - 12PM</div>
+                                    <div class="twelve">12PM - 6PM</div>
+                                    <div class="six">After 6PM</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5>Arrival Time</h5>
+                                <div class="filter-by dep-time">
+                                    <div>Before 6AM</div>
+                                    <div>6AM - 12PM</div>
+                                    <div>12PM - 6PM</div>
+                                    <div>After 6PM</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5>Price Range</h5>
+                                <div class="filter-by price-by">
+                                    <p>
+                                        <span class="r-icon">
+                                            <i class="fas fa-rupee-sign"></i>
+                                        </span>
+                                        <span class="min-value">100</span>
+                                    </p>
+                                    <input type="text" class="range"/>
+                                    <p>
+                                        <span class="r-icon" style="margin-left: 6px;">
+                                            <i class="fas fa-rupee-sign"></i>
+                                        </span>
+                                        <span style="font-weight: 600;">1000</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-9 col-lg-9">
                         <div class="flight-aria">
@@ -128,7 +183,7 @@
                             </div>
                             <div class="footer-content">
                                 <div>
-                                    <span class="flight-detail">Flight Detail</span>
+                                    <span class="flight-detail" id="flight-1" onclick="showHideDetail(this.id)">Flight Detail</span>
                                     <span class="refundable">Refundable</span>
                                 </div>
                                 <div class="luggage">
@@ -149,6 +204,103 @@
                                         </span>
                                     </span>
                                 </div>
+                            </div>
+                            <div class="detail-aria" id="flight-1-detail" style="display: none;">
+                                <div class="tab-menu">
+                                    <div class="tab-box active" id="flight-1-detail-tab-1" onclick="tabChange(this.id)">
+                                        <span class="icon plane">
+                                            <i class="fas fa-plane"></i>
+                                        </span>
+                                        <span class="txt">Flight Itinerary</span>
+                                    </div>
+                                    <div class="tab-box tab-2" id="flight-1-detail-tab-2" onclick="tabChange(this.id)">
+                                        <span class="icon">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </span>
+                                        <span class="txt">Baggage</span>
+                                    </div>
+                                    <div class="tab-box tab-3" id="flight-1-detail-tab-3" onclick="tabChange(this.id)">
+                                        <span class="icon">
+                                            <i class="fas fa-bars"></i>
+                                        </span>
+                                        <span class="txt">Fare Rule</span>
+                                    </div>
+                                </div>
+                                <div id="flight-1-detail-tab-1-content">
+                                    <div class="d-box">
+                                        <div>
+                                            <img src="images/spicejet.png" width="30" />
+                                        </div>
+                                        <div>
+                                            SpiceJet 481
+                                        </div>
+                                        <div class="dot">
+    
+                                        </div>
+                                        <div>
+                                            737
+                                        </div>
+                                        <div class="dot"></div>
+                                        <div>Class <b>P</b></div>
+                                        <div class="dot"></div>
+                                        <div>Economy</div>
+                                    </div>
+                                    <div class="f-box">
+                                        <div class="p-detail">
+                                            <h6>PAT <b>17:35</b></h6>
+                                            <p>Jai Prakash Narayan Arpt</p>
+                                            <p>Patna</p>
+                                            <p>Thu, 30 Dec</p>
+                                        </div>
+                                        <div class="t-detail">
+                                            <p>
+                                                <i class="far fa-clock"></i>
+                                            </p>
+                                            <p>01h 50m</p>
+                                        </div>
+                                        <div class="p-detail des-t">
+                                            <h6>Delhi <b>19:25</b></h6>
+                                            <p>Delhi Indra Gandhi Inti</p>
+                                            <p>Delhi</p>
+                                            <p>Thu, 30 Dec</p>
+                                        </div>
+                                        <div class="r-box">
+                                            Refundable
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="flight-1-detail-tab-2-content" style="display: none">
+                                    <div class="b-detail">
+                                        <div class="b-top">
+                                            <img src="images/spicejet.png" width="30"/>
+                                            <p>Patna - Delhi</p>
+                                        </div>
+                                        <table class="table table-bordered">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Baggage Type</th>
+                                                    <th>Check-in baggage</th>
+                                                    <th>Cabin baggage</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Adult/Child</td>
+                                                    <td>15 Kg</td>
+                                                    <td>7 Kg</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="some-txt">
+                                            The baggage information is just for reference. Please check with the airline before 
+                                            check-in.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id="flight-1-detail-tab-3-content" style="display: none">
+                                    hello
+                                </div>
+                                
                             </div>
                         </div>
                         <div class="flight-aria">
@@ -191,7 +343,7 @@
                             </div>
                             <div class="footer-content">
                                 <div>
-                                    <span class="flight-detail">Flight Detail</span>
+                                    <span class="flight-detail" id="flight-2" onclick="showHideDetail(this.id)">Flight Detail</span>
                                     <span class="refundable">Refundable</span>
                                 </div>
                                 <div class="luggage">
@@ -212,6 +364,103 @@
                                         </span>
                                     </span>
                                 </div>
+                            </div>
+                            <div class="detail-aria" id="flight-2-detail" style="display: none;">
+                                <div class="tab-menu">
+                                    <div class="tab-box active" id="flight-2-detail-tab-1" onclick="tabChange(this.id)">
+                                        <span class="icon plane">
+                                            <i class="fas fa-plane"></i>
+                                        </span>
+                                        <span class="txt">Flight Itinerary</span>
+                                    </div>
+                                    <div class="tab-box" id="flight-2-detail-tab-2" onclick="tabChange(this.id)">
+                                        <span class="icon">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </span>
+                                        <span class="txt">Baggage</span>
+                                    </div>
+                                    <div class="tab-box" id="flight-2-detail-tab-3" onclick="tabChange(this.id)">
+                                        <span class="icon">
+                                            <i class="fas fa-bars"></i>
+                                        </span>
+                                        <span class="txt">Fare Rule</span>
+                                    </div>
+                                </div>
+                                <div id="flight-2-detail-tab-1-content">
+                                    <div class="d-box">
+                                        <div>
+                                            <img src="images/spicejet.png" width="30" />
+                                        </div>
+                                        <div>
+                                            SpiceJet 481
+                                        </div>
+                                        <div class="dot">
+    
+                                        </div>
+                                        <div>
+                                            737
+                                        </div>
+                                        <div class="dot"></div>
+                                        <div>Class <b>P</b></div>
+                                        <div class="dot"></div>
+                                        <div>Economy</div>
+                                    </div>
+                                    <div class="f-box">
+                                        <div class="p-detail">
+                                            <h6>PAT <b>17:35</b></h6>
+                                            <p>Jai Prakash Narayan Arpt</p>
+                                            <p>Patna</p>
+                                            <p>Thu, 30 Dec</p>
+                                        </div>
+                                        <div class="t-detail">
+                                            <p>
+                                                <i class="far fa-clock"></i>
+                                            </p>
+                                            <p>01h 50m</p>
+                                        </div>
+                                        <div class="p-detail des-t">
+                                            <h6>Delhi <b>19:25</b></h6>
+                                            <p>Delhi Indra Gandhi Inti</p>
+                                            <p>Delhi</p>
+                                            <p>Thu, 30 Dec</p>
+                                        </div>
+                                        <div class="r-box">
+                                            Refundable
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="flight-2-detail-tab-2-content" style="display: none">
+                                    <div class="b-detail">
+                                        <div class="b-top">
+                                            <img src="images/spicejet.png" width="30"/>
+                                            <p>Patna - Delhi</p>
+                                        </div>
+                                        <table class="table table-bordered">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Baggage Type</th>
+                                                    <th>Check-in baggage</th>
+                                                    <th>Cabin baggage</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Adult/Child</td>
+                                                    <td>15 Kg</td>
+                                                    <td>7 Kg</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="some-txt">
+                                            The baggage information is just for reference. Please check with the airline before 
+                                            check-in.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id="flight-2-detail-tab-3-content" style="display: none">
+                                    hello
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
