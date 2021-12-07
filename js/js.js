@@ -208,3 +208,27 @@ var openModal = (id) => {
         document.getElementById("modal-dialog").classList.add("modal-lg");
     }
 }
+var searchByStops = (id) => {
+    
+    if(id == "zero-stop"){
+        //use loop here
+        for(i = 0; i < 2; i++){
+            document.getElementById(`f-${i+1}-stop-dot`).style.display = "none";
+            document.getElementById(`f-${i+1}-stop-txt`).innerText = "Non-stop";
+            document.getElementById(`f-${i+1}-stop-txt`).style.color = "#1aac41";
+        }
+        
+    }
+    else if(id == "one-stop"){
+        //use loop here
+        for(i = 0; i < 2; i++){
+            document.getElementById(`f-${i+1}-stop-dot`).style.display = "block";
+            document.getElementById(`f-${i+1}-stop-txt`).innerText = "1 stop";
+            document.getElementById(`f-${i+1}-stop-txt`).style.color = "red";
+        }
+        
+    }
+    else if(id == "more-stop"){
+
+    }
+}

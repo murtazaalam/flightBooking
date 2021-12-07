@@ -91,9 +91,9 @@
                             <div>
                                 <h5>No. Of Stop</h5>
                                 <div class="filter-by stop">
-                                    <div>0 STOP</div>
-                                    <div>1 STOP</div>
-                                    <div>1+ STOP</div>
+                                    <div id="zero-stop" onclick="searchByStops(this.id)">0 STOP</div>
+                                    <div id="one-stop" onclick="searchByStops(this.id)">1 STOP</div>
+                                    <div id="more-stop" onclick="searchByStops(this.id)">1+ STOP</div>
                                 </div>
                             </div>
                             <div>
@@ -139,7 +139,6 @@
                                     </p>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-9 col-lg-9">
@@ -163,9 +162,11 @@
                                         <div class="line-box">
                                             <div class="dot"></div>
                                             <div class="line"></div>
+                                            <div class="dot" id="f-1-stop-dot" style="display: none"></div>
+                                            <div class="line"></div>
                                             <div class="dot"></div>
                                         </div>
-                                        <div class="none-stop">Non-stop</div>
+                                        <div class="none-stop" id="f-1-stop-txt">Non-stop</div>
                                         <div class="date">9 Seat(s) left</div>
                                     </div>
                                     <div>
@@ -323,9 +324,11 @@
                                         <div class="line-box">
                                             <div class="dot"></div>
                                             <div class="line"></div>
+                                            <div class="dot" id="f-2-stop-dot" style="display: none"></div>
+                                            <div class="line"></div>
                                             <div class="dot"></div>
                                         </div>
-                                        <div class="none-stop">Non-stop</div>
+                                        <div class="none-stop" id="f-2-stop-txt">Non-stop</div>
                                         <div class="date">9 Seat(s) left</div>
                                     </div>
                                     <div>
