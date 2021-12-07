@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/all.css" />
+        <script src="js/js.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/all.js" type="text/javascript"></script>
+        <script src="js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Fly<b>High</b></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Holiday Package</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Flight Schedule</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Account Setting</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" >Manage Booking</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center">
+                            <a class="register" href="#">Register</a>
+                            <button class="btn-signin">Sign In</button>
+                            <select class="lang-select">
+                                <option>EN</option>
+                                <option>HN</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <section class="traveller-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-10 col-md-10 col-lg-10">
+                        <div class="flow-info">
+                            <div class="circle fill">
+
+                            </div>
+                            <div class="line"></div>
+                            <div class="circle">
+
+                            </div>
+                            <div class="line"></div>
+                            <div class="circle">
+
+                            </div>
+                        </div>
+                        <div class="flow-info text-box">
+                            <div>
+                                Traveller Information
+                            </div>
+                            <div class="payment">
+                                Payment Method
+                            </div>
+                            <div>
+                                Booking Confirmed
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-2 col-md-2 col-lg-2">
+                        <div class="timer">
+                            <span class="icon">
+                                <i class="far fa-clock"></i>
+                            </span>
+                            <span>12 m : 50 s</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="f-detail">
+                    <div class="f-box">
+                        <div class="d-flex"> 
+                            <div class="icon">
+                                <img src="images/spicejet.png" width="30"/>
+                            </div>
+                            <div>
+                                <div class="d-flex">
+                                    <div>
+                                        <span class="place">PAT</span>
+                                        <span class="time">17:35</span>
+                                        <span class="date">30 Dec</span>
+                                    </div>
+                                    <div class="arrow-icon">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                    <div>
+                                        <span class="place">DEL</span>
+                                        <span class="time">19:25</span>
+                                        <span class="date">30 Dec</span>
+                                    </div>
+                                </div>
+                                <div class="more-detail">
+                                    <span>Non-stop</span> .
+                                    <span>01h 50m</span> .
+                                    <span>Check-in NA</span> |
+                                    <span>Cabin NA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="info" data-bs-toggle="modal" data-bs-target="#extraItemModal" id="i-button"
+                            onclick="openModal(this.id)">
+                            i
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-9">
+                            <div class="info-body">
+                                <div class="info-heading">
+                                    <h1>Traveller Information</h1>
+                                </div>
+                                <div class="tr-detail">
+                                    <div class="adult"> 1 Adult</div>
+                                    <div class="input-fields">
+                                        <select class="form-select">
+                                            <option>Title</option>
+                                            <option>Mr</option>
+                                            <option>Ms</option>
+                                            <option>Mrs</option>
+                                        </select>
+                                        <input type="text" class="form-control name" placeholder="First Name & Middle Name" />
+                                        <input type="text" class="form-control" placeholder="Last Name"/>
+                                    </div>
+                                    <div class="freq-flyer">
+                                        <span class="fr-text" id="freq-flyer" onclick="showHideFields(this.id)">
+                                            Add Frequent Flyer Number
+                                        </span>
+                                        <span class="plus" id="plus" style="display: inline-block;"><i class="fas fa-plus"></i></span>
+                                        <span class="minus" id="minus" style="display: none;"><i class="fas fa-minus"></i></span>
+                                        <div class="freq-flyer-aria" id="freq-flyer-aria">
+                                            <select class="form-select">
+                                                <option value="1">Frequent Flyer Airline</option>
+                                                <option value="1">A</option>
+                                                <option value="1">A</option>
+                                            </select>
+                                            <input type="text" class="form-control" placeholder="Frequent Flyer Number" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-9">
+                                            <div class="extra-aria">
+                                                <span class="extra-txt">Meal (<span>PAT-DEL</span>) : </span>
+                                                <span class="extra" id="meal">No Meal</span>
+                                                <span class="extra-txt"> | Extra Baggage (<span>PAT-DEL</span>) : </span>
+                                                <span class="extra" id="bag">No Baggage</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-3">
+                                            <button type="button" class="btn-add" data-bs-toggle="modal" id="addMealBags"
+                                            data-bs-target="#extraItemModal" onclick="openModal(this.id)">
+                                                Add Meal / Baggage
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="adult contact-txt">Contact Information</div>
+                                    <div class="contact-box">
+                                        <input type="text" class="form-control" placeholder="Email"/>
+                                        <input type="text" class="form-control code" value="+91"/>
+                                        <input type="text" class="form-control" placeholder="Mobile Number"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+                            <div class="fare-aria">
+                                <div class="info-heading">
+                                    <h1>Fare Information</h1>
+                                </div>
+                                <div class="fare-content">
+                                    <div class="fare-box">
+                                        <div>
+                                            <p class="txt">Base Fare</p>
+                                            <p class="extra-txt">+ Meal / Extra Baggage</p>
+                                            <p class="txt">Tax & Fees</p>
+                                        </div>
+                                        <div>
+                                            <p class="txt">INR 2,421</p>
+                                            <p class="extra-txt">INR 4,395</p>
+                                            <p class="txt">INR 1,253</p>
+                                        </div>
+                                    </div>
+                                    <div class="total-aria">
+                                        <div>
+                                            <p class="g-txt">Grand Total</p>
+                                            <p class="ad-txt">Additional Charges*</p>
+                                        </div>
+                                        <div>
+                                            <p class="g-txt">INR 8,069</p>
+                                            <p class="ad-txt">INR 15</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-continue">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Modal of add meal and baggage and i button-->
+        <div class="modal fade" id="extraItemModal" tabindex="-1" aria-labelledby="extraItemModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" id="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="extraItemModalLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div id="extra-items">
+                            <label class="meal-label">Meal (<span>PAT-DEL</span>)</label>
+                            <select class="form-select" id="meal-item" onchange="extraItem(this.id)">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <label class="bag-label">Extra baggage (<span>PAT-DEL</span>)</label>
+                            <select class="form-select" id="bag-item" onchange="extraItem(this.id)">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div id="flight-info">
+                            <div class="f-box f-box-detail">
+                                <div class="d-flex"> 
+                                    <div>
+                                        <div class="d-flex">
+                                            <div>
+                                                <span class="place">PAT</span>
+                                                <span class="time">17:35</span>
+                                                <span class="date">30 Dec</span>
+                                            </div>
+                                            <div class="arrow-icon">
+                                                <i class="fas fa-arrow-right"></i>
+                                            </div>
+                                            <div>
+                                                <span class="place">DEL</span>
+                                                <span class="time">19:25</span>
+                                                <span class="date">30 Dec</span>
+                                            </div>
+                                        </div>
+                                        <div class="more-detail">
+                                            <span>Non-stop</span> .
+                                            <span>01h 50m</span> .
+                                            <span>Check-in NA</span> |
+                                            <span>Cabin NA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <span>INR</span>
+                                        <span class="final-price">3,674</span>
+                                    </div>
+                                    <div class="seat-left">
+                                        <span>9</span>
+                                        <span>seat(s) left</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail-aria">
+                                <div class="tab-menu">
+                                    <div class="tab-box active" id="itinerary" onclick="tabChange(this.id)">
+                                        <span class="icon plane">
+                                            <i class="fas fa-plane"></i>
+                                        </span>
+                                        <span class="txt">Flight Itinerary</span>
+                                    </div>
+                                    <div class="tab-box tab-2" id="baggage" onclick="tabChange(this.id)">
+                                        <span class="icon">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </span>
+                                        <span class="txt">Baggage</span>
+                                    </div>
+                                </div>
+                                <div id="itinerary-content">
+                                    <div class="d-box">
+                                        <div>
+                                            <img src="images/spicejet.png" width="30" />
+                                        </div>
+                                        <div>
+                                            SpiceJet 481
+                                        </div>
+                                        <div class="dot">
+    
+                                        </div>
+                                        <div>
+                                            737
+                                        </div>
+                                        <div class="dot"></div>
+                                        <div>Class <b>P</b></div>
+                                        <div class="dot"></div>
+                                        <div>Economy</div>
+                                    </div>
+                                    <div class="f-box">
+                                        <div class="p-detail">
+                                            <h6>PAT <b>17:35</b></h6>
+                                            <p>Jai Prakash Narayan Arpt</p>
+                                            <p>Patna</p>
+                                            <p>Thu, 30 Dec</p>
+                                        </div>
+                                        <div class="t-detail">
+                                            <p>
+                                                <i class="far fa-clock"></i>
+                                            </p>
+                                            <p>01h 50m</p>
+                                        </div>
+                                        <div class="p-detail des-t">
+                                            <h6>Delhi <b>19:25</b></h6>
+                                            <p>Delhi Indra Gandhi Inti</p>
+                                            <p>Delhi</p>
+                                            <p>Thu, 30 Dec</p>
+                                        </div>
+                                        <div class="r-box">
+                                            Refundable
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="baggage-content" style="display: none">
+                                    <div class="b-detail">
+                                        <div class="b-top">
+                                            <img src="images/spicejet.png" width="30"/>
+                                            <p>Patna - Delhi</p>
+                                        </div>
+                                        <table class="table table-bordered">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Baggage Type</th>
+                                                    <th>Check-in baggage</th>
+                                                    <th>Cabin baggage</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Adult/Child</td>
+                                                    <td>15 Kg</td>
+                                                    <td>7 Kg</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="some-txt">
+                                            The baggage information is just for reference. Please check with the airline before 
+                                            check-in.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+            
+    </body>
+</html>

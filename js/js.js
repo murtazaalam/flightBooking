@@ -154,4 +154,57 @@ var tabChange = (id) => {
         document.getElementById(`${detailAriaId}-tab-2-content`).style.display = "none";
         document.getElementById(`${detailAriaId}-tab-1-content`).style.display = "none";
     }
+    else if(id == "itinerary"){
+        document.getElementById("itinerary").classList.add("active");
+        document.getElementById("baggage").classList.remove("active");
+        document.getElementById("itinerary-content").style.display = "block";
+        document.getElementById("baggage-content").style.display = "none";
+    }
+    else if(id == "baggage"){
+        document.getElementById("baggage").classList.add("active");
+        document.getElementById("itinerary").classList.remove("active");
+        document.getElementById("baggage-content").style.display = "block";
+        document.getElementById("itinerary-content").style.display = "none";
+    }
+}
+
+var showHideFields = (id) => {
+    if(id == "freq-flyer"){
+        var plus = document.getElementById("plus").getAttribute("style").split(":")[1].trim();
+        var minus = document.getElementById("minus").getAttribute("style").split(":")[1].trim();
+        if(plus == "inline-block;" & minus == "none;"){
+            document.getElementById("plus").style.display = "none";
+            document.getElementById("minus").style.display = "inline-block";
+            document.getElementById("freq-flyer-aria").style.display = "flex";
+        }
+        else{
+            document.getElementById("plus").style.display = "inline-block";
+            document.getElementById("minus").style.display = "none";
+            document.getElementById("freq-flyer-aria").style.display = "none";
+        }
+    }
+}
+var extraItem = (id) => {
+    var selectedItem = document.getElementById(id).value;
+    if(id == "meal-item"){
+        document.getElementById("meal").innerHTML = selectedItem;
+    }
+    else if(id == "bag-item"){
+        document.getElementById("bag").innerHTML = selectedItem;
+    }
+}
+
+var openModal = (id) => {
+    if(id == "addMealBags"){
+        document.getElementById("extraItemModalLabel").innerText = "Meal & Extra baggage";
+        document.getElementById("extra-items").style.display = "block";
+        document.getElementById("flight-info").style.display = "none";
+        document.getElementById("modal-dialog").classList.remove("modal-lg");
+    }
+    else if(id == "i-button"){
+        document.getElementById("extraItemModalLabel").innerText = "Flight Details";
+        document.getElementById("extra-items").style.display = "none";
+        document.getElementById("flight-info").style.display = "block";
+        document.getElementById("modal-dialog").classList.add("modal-lg");
+    }
 }

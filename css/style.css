@@ -511,9 +511,6 @@ input[type=number] {
     font-weight: 600;
     color: #1aac41;
 }
-.detail-aria{
-    
-}
 .detail-aria .tab-menu{
     display: flex;
     border-bottom: 1px solid #cdcdcd;
@@ -605,6 +602,258 @@ input[type=number] {
     color: #8f8c8c;
     margin: 0;
 }
+.traveller-info .circle{
+    height: 24px;
+    width: 24px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+.traveller-info .flow-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.traveller-info .text-box{
+    font-weight: 600;
+}
+.traveller-info .text-box .payment{
+    margin: 4px 10px;
+}
+.traveller-info .fill{
+    background: #2c3e92;
+}
+.traveller-info .timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 4px 0;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+.traveller-info .timer .icon{
+    margin-right: 8px;
+}
+.traveller-info .timer span{
+    font-weight: 600;
+}
+.traveller-info .f-detail{
+    padding: 24px 8px;
+    background: #fff;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+.traveller-info .f-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+    padding: 8px;
+
+}
+.final-price{
+    font-weight: 600;
+    font-size: 20px;
+}
+.seat-left{
+    margin-top: -10px;
+}
+.seat-left span{
+    font-size: 12px;
+    color: red;
+    font-weight: 600;
+}
+.f-box-detail{
+    padding-bottom: 10px;
+    border-bottom: 1px dotted lightgray;
+    display: flex;
+    justify-content: space-between;
+}
+.traveller-info .f-detail .icon{
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f-box .arrow-icon{
+    margin: 0 10px;
+    color: grey;
+}
+.f-box .more-detail{
+    font-size: 10px;
+    color: grey
+}
+.traveller-info .f-detail .info{
+    color: #fff;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    background: grey;
+    font-weight: 600;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+.traveller-info .f-detail .info:hover{
+    background: #424040;
+}
+.info-body{
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+.info-heading{
+    padding: 8px;
+    background: #e5e2e2;;
+}
+.info-heading h1{
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+}
+.fare-box{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+}
+.total-aria{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.total-aria p{
+    margin: 0;
+}
+.total-aria .g-txt{
+    font-size: 18px;
+    font-weight: 600;
+}
+.total-aria .ad-txt{
+    font-size: 12px;
+}
+.fare-content{
+    padding: 8px;
+}
+.fare-box p{
+    margin: 0;
+}
+.fare-aria{
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+.fare-box .txt{
+    font-size: 16px;
+    font-weight: 600;
+}
+.extra-txt{
+    font-size: 12px;
+    margin-bottom: 8px !important;
+}
+.info-body .tr-detail{
+    padding: 20px;
+}
+.info-body .input-fields{
+    display: flex;
+    flex-direction: column;
+}
+.info-body .input-fields .name{
+    margin: 10px 0;
+}
+.info-body .adult{
+    padding: 4px 8px;
+    margin: 6px 0;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: fit-content;
+    background: #fbe6e6;
+    border-radius: 4px;
+}
+.freq-flyer{
+    margin: 10px 0;
+}
+.freq-flyer .fr-text{
+    font-weight: 600;
+    cursor: pointer;
+}
+.freq-flyer span{
+    font-size: 12px;
+    color: #0000d9;
+}
+.freq-flyer .minus{
+    display: none;
+}
+.freq-flyer-aria{
+    margin: 10px 0px;
+    display: none;
+    flex-direction: column;
+}
+.freq-flyer-aria input{
+    margin-top: 10px;
+}
+.extra-aria{
+    padding: 6px;
+    border: 1px solid;
+    border-radius: 4px;
+    background: #ebebeb;
+}
+.extra-aria .extra-txt{
+    font-size: 12px;
+}
+.extra-aria .extra{
+    font-size: 12px;
+    font-weight: 600;
+}
+.btn-add{
+    font-size: 14px;
+    padding: 9px;
+    border: none;
+    background: #c6c6ed;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+}
+.modal-body .meal-label{
+    margin-bottom: 8px;
+}
+.modal-body .bag-label{
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.contact-box{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+}
+.contact-box .code{
+    margin: 10px 0;
+}
+.contact-txt{
+    margin-top: 16px !important;
+}
+.btn-continue{
+    width: 100%;
+    padding: 8px;
+    border: none;
+    margin: 12px 0 0 0;
+    font-weight: 600;
+    color: #0000d9;
+    background: #c6c6ed;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+.btn-continue:hover{
+    background: #9e9ee7;
+}
 @media screen and (min-width: 281px){
     .arc2{
         left: 64%;
@@ -614,6 +863,9 @@ input[type=number] {
     }
 }
 @media screen and (min-width: 321px){
+    .f-box .arrow-icon{
+        margin: 0 1px;
+    }
     .arc2{
         left: 62%;
     }
@@ -635,8 +887,14 @@ input[type=number] {
     .detail-aria .f-box .p-detail p{
         font-size: 12px;
     }
+    .traveller-info .text-box .payment{
+        margin: 0 8px;
+    }
 }
 @media screen and (min-width: 361px){
+    .f-box .arrow-icon{
+        margin: 0 6px;
+    }
     .arc1{
         left: 49.8%;
     }
@@ -649,8 +907,14 @@ input[type=number] {
     .currency{
         display: inline-block;
     }
+    .traveller-info .text-box .payment{
+        margin: 0 62px;
+    }
 }
 @media screen and (min-width: 376px){
+    .f-box .arrow-icon{
+        margin: 0 10px;
+    }
     .detail-content{
         top: 28px;
     }
@@ -664,6 +928,13 @@ input[type=number] {
     .line{
         width: 172px;
     }
+    .contact-box{
+        flex-direction: row;
+    }
+    .contact-box .code{
+        width: 30%;
+        margin: 0 4px;
+    }
 }
 @media screen and (min-width: 414px){
     .arc2{
@@ -671,6 +942,9 @@ input[type=number] {
     }
 }
 @media screen and (min-width: 520px){
+    .traveller-info .f-detail .info{
+        display: block;
+    }
     .arc2{
         left: 58%;
     }
@@ -689,6 +963,9 @@ input[type=number] {
     }
     .detail-aria .f-box .r-box{
         display: block;
+    }
+    .traveller-info .text-box .payment{
+        margin: 8px 48px;
     }
 }
 @media screen and (min-width: 576px){
@@ -743,9 +1020,17 @@ input[type=number] {
         font-size: 9px;
         width: 31%;
     }
+    .traveller-info .text-box .payment{
+        margin: 8px 32px;
+    }
+    .timer{
+        font-size: 14px;
+    }
 }
 @media screen and (min-width: 992px){
-
+    .fare-content{
+        padding: 4px;
+    }
     .hotel{
         display: flex;
         justify-content: space-between;
@@ -826,6 +1111,28 @@ input[type=number] {
     }       
 }
 @media screen and (min-width: 1200px){
+    .fare-content{
+        padding: 8px;
+    }
+    .btn-add{
+        margin-top: 0;
+    }
+    .freq-flyer-aria{
+        flex-direction: row;
+    }
+    .freq-flyer-aria input{
+        margin-top: 0;
+        margin-left: 10px;
+    }
+    .info-body .input-fields .name{
+        margin: 0 10px;
+    }
+    .info-body .input-fields{
+        flex-direction: row;
+    }
+    .traveller-info .f-detail{
+        padding: 24px 24px;
+    }
     .main-title {
         font-size: 22px;
     }       
@@ -889,5 +1196,8 @@ input[type=number] {
     }
     .total-flights{
         font-size: 16px;
+    }
+    .traveller-info .text-box .payment{
+        margin: 8px 120px;
     }
 }
