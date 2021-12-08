@@ -248,7 +248,7 @@ body{
     background: #fff;
     padding: 12px;
 }
-.form-box div{
+.form-box .fields{
     margin-top: 12px;
 }
 .search-list{
@@ -812,6 +812,109 @@ input[type=number] {
     font-size: 12px;
     font-weight: 600;
 }
+.hotel-info{
+    background: #fff;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.hotel-detail-box{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.hotel-detail-box .h-name{
+    font-size: 16px;
+    font-weight: 600;
+}
+.hotel-detail-box .star-badge{
+    font-size: 14px;
+    padding: 0px 4px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    border-radius: 10px;
+    background: #ebebeb;
+    color: #ef0e0e;
+}
+.hotel-detail-box .addr{
+    font-size: 10px;
+    margin: 0 0 6px 0;
+}
+.hotel-detail-box .review span{
+    font-size: 14px;
+    font-weight: 600;
+}
+.hotel-detail-box .review p{
+    font-size: 10px;
+    margin: 0;
+}
+.hotel-detail-box .review{
+    margin-bottom: 8px;
+}
+.hotel-detail-box .facility{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.hotel-detail-box .facility li{
+    display: inline-block;
+    padding: 2px 6px;
+    background: #dbd9d9;
+    border-radius: 12px;
+    font-weight: 600;
+}
+.hotel-detail-box .local-title{
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+}
+.hotel-detail-box ul{
+    margin-bottom: 8px;
+}
+.hotel-detail-box ul li{
+    font-size: 12px;
+}
+.booking-box{
+    padding: 10px;
+    text-align: center;
+}
+.booking-box .b-price span{
+    font-size: 16px;
+    font-weight: 600;
+}
+.booking-box .tax{
+    font-size: 12px;
+}
+.booking-box .some-other-info p{
+    font-size: 12px;
+    margin: 4px 0;
+    color: green;
+}
+.booking-box .book-now{
+    font-size: 16px;
+    border: none;
+    text-transform: uppercase;
+    padding: 4px 32px;
+    background: #2222d3;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 20px;
+}
+.image-container{
+    width: 100%;
+}
+.image-container img{
+    border-radius: 8px;
+}
+.hotel-form{
+    border-radius: 8px;
+}
+.review .r-value{
+    background: #ebebeb;
+    margin-right: 4px;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
 .btn-add{
     font-size: 14px;
     padding: 9px;
@@ -854,6 +957,20 @@ input[type=number] {
 .btn-continue:hover{
     background: #9e9ee7;
 }
+.guest-detail span{
+    margin: 0;
+}
+.guest-detail{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 !important;
+    padding: 10px 4px;
+    font-size: 12px;
+}
+.det-content{
+    margin-top: 0px !important;
+    top: 40px !important;
+}
 @media screen and (min-width: 281px){
     .arc2{
         left: 64%;
@@ -863,6 +980,13 @@ input[type=number] {
     }
 }
 @media screen and (min-width: 321px){
+    .det-content{
+        top: 43px !important;
+    }
+    .guest-detail{
+        font-size: 14px;
+        font-weight: 400 !important;
+    }
     .f-box .arrow-icon{
         margin: 0 1px;
     }
@@ -942,6 +1066,10 @@ input[type=number] {
     }
 }
 @media screen and (min-width: 520px){
+    .image-container img{
+        max-width: 100%;
+        width: 100%;
+    }
     .traveller-info .f-detail .info{
         display: block;
     }
@@ -1028,6 +1156,19 @@ input[type=number] {
     }
 }
 @media screen and (min-width: 992px){
+    .booking-box{
+        text-align: right;
+    }
+    .det-content{
+        top: 39px !important;
+    }
+    .guest-detail{
+        font-size: 11px;
+        width: 206px;
+    }
+    .guest-info{
+        margin: 0;
+    }
     .fare-content{
         padding: 4px;
     }
@@ -1082,7 +1223,7 @@ input[type=number] {
         display: flex;
         align-items: end;
     }
-    .form-box div{
+    .form-box .fields{
         margin-right: 6px;
     }
     .main-content{
@@ -1104,13 +1245,21 @@ input[type=number] {
     .dep-time div{
         font-size: 12px;
     }
+    .det-content{
+        margin-right: 0 !important;
+    }
 }
 @media screen and (min-width: 1025px){
     .main-title {
         font-size: 18px;
     }       
+
 }
 @media screen and (min-width: 1200px){
+    .guest-detail{
+        font-size: 12px;
+        width: 232px;
+    }
     .fare-content{
         padding: 8px;
     }
@@ -1179,7 +1328,7 @@ input[type=number] {
     .form-box{
         justify-content: space-between;
     }
-    .form-box div{
+    .form-box .fields{
         margin-right: 0;
     }
     .line{
