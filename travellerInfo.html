@@ -125,16 +125,9 @@
                                     <h1>Traveller Information</h1>
                                 </div>
                                 <div class="tr-detail">
-                                    <div class="adult"> 1 Adult</div>
-                                    <div class="input-fields">
-                                        <select class="form-select">
-                                            <option value="1">Title</option>
-                                            <option value="1">Mr</option>
-                                            <option value="1">Ms</option>
-                                            <option value="1">Mrs</option>
-                                        </select>
-                                        <input type="text" class="form-control name" placeholder="First Name & Middle Name" />
-                                        <input type="text" class="form-control" placeholder="Last Name"/>
+                                    <div class="adult">Passengers Details</div>
+                                    <div id="passengers-info">
+                                        
                                     </div>
                                     <div class="freq-flyer">
                                         <span class="fr-text" id="freq-flyer" onclick="showHideFields(this.id)">
@@ -370,6 +363,8 @@
                     </div>
                 </div>
             </div>
-            
+            <script>
+                window.onload = loadInfoBox();
+            </script>
     </body>
 </html>

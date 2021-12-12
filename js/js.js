@@ -1,4 +1,5 @@
 var detailAriaId;
+let totalPassengers = 0;
 var swap = (flight) =>{
     if(flight == "flight-search"){
         var originCity = document.getElementById("origin-city").value;
@@ -66,12 +67,17 @@ var changeTab = (id) =>{
     
 }
 var getNumbers = (id) => {
+    let totalNumberOfAdults = 0;
+    let totalNumberOfchild = 0;
     if(id == "adults"){
+        totalNumberOfAdults = document.getElementById("adults").value;
+        window.localStorage.setItem("Adults", totalNumberOfAdults);
         document.getElementById("a-value").innerText = document.getElementById("adults").value;
     }
     else if(id == "children"){
-
-        var childCount = document.getElementById("children").value
+        totalNumberOfchild = document.getElementById("children").value;
+        window.localStorage.setItem("Children", totalNumberOfchild);
+        var childCount = document.getElementById("children").value;
         document.getElementById("c-value").innerText = childCount;
 
         if(childCount == 0){
@@ -98,6 +104,12 @@ var getNumbers = (id) => {
     }
 }
 var getValues = () => {
+    window.localStorage.getItem("Adults") ? document.getElementById("a-value").innerText = window.localStorage.getItem("Adults")
+                                    : document.getElementById("a-value").innerText = document.getElementById("a-value").innerHTML;
+    
+    window.localStorage.getItem("Children") ? document.getElementById("c-value").innerText = window.localStorage.getItem("Children")
+                                    : document.getElementById("c-value").innerText = document.getElementById("c-value").innerHTML;                                   
+
     var aValue = document.getElementById("a-value").innerHTML;
     var cValue = document.getElementById("c-value").innerHTML;
     var gValue = document.getElementById("g-value").innerHTML;
@@ -231,4 +243,46 @@ var searchByStops = (id) => {
     else if(id == "more-stop"){
 
     }
+}
+var selectTripType = () => {
+    var tripType = document.getElementById("trip-type").value;
+    if(tripType == 2 || tripType == 4){
+        document.getElementById("return").disabled = false;
+    }
+    else{
+        document.getElementById("return").disabled = true;
+    }
+}
+var loadInfoBox = () => {
+    totalPassengers = Number(window.localStorage.getItem("Adults"))+Number(window.localStorage.getItem("Children"));
+    if(totalPassengers < 2){
+        var infoFields = `<div class="input-fields">
+                            <select class="form-select">
+                                <option value="0">Title</option>
+                                <option value="1">Mr</option>
+                                <option value="2">Ms</option>
+                                <option value="3">Mrs</option>
+                            </select>
+                            <input type="text" class="form-control name" placeholder="First Name & Middle Name" />
+                            <input type="text" class="form-control" placeholder="Last Name"/>
+                        </div>`;
+            $('#passengers-info').append(infoFields);
+    }
+    else {
+        for(var i = 0; i < totalPassengers; i++){
+            var infoFields = `<div class="adult">P-${i+1}</div>
+                                <div class="input-fields">
+                                    <select class="form-select">
+                                        <option value="0">Title</option>
+                                        <option value="1">Mr</option>
+                                        <option value="2">Ms</option>
+                                        <option value="3">Mrs</option>
+                                    </select>
+                                    <input type="text" class="form-control name" placeholder="First Name & Middle Name" />
+                                    <input type="text" class="form-control" placeholder="Last Name"/>
+                                </div>`;
+            $('#passengers-info').append(infoFields);
+        }
+    }
+    
 }

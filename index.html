@@ -86,11 +86,11 @@
                         <div id="flight-content"> 
                             <div class="selects">
                                 <div>
-                                    <select class="form-select">
-                                        <option selected>Round Trip</option>
-                                        <option>One Way</option>
-                                        <option>Advanced Search</option>
-                                        <option>Special Return</option>
+                                    <select class="form-select" id="trip-type" onchange="selectTripType()">
+                                        <option value="1" selected>One Way</option>
+                                        <option value="2">Round Trip</option>
+                                        <option value="3">Advanced Search</option>
+                                        <option value="4">Special Return</option>
                                     </select>
                                 </div>
                                 <div>
@@ -103,15 +103,7 @@
                                         <option>First</option>
                                     </select>
                                 </div>
-                                <div>
-                                    <select class="form-select">
-                                        <option selected>01 Passenger</option>
-                                        <option>02 Passengers</option>
-                                        <option>03 Passengers</option>
-                                        <option>04 Passengers</option>
-                                        <option>05 Passengers</option>
-                                    </select>
-                                </div>
+                                
                                 <div>
                                     <select class="form-select">
                                         <option selected>Direct Type</option>
@@ -125,7 +117,44 @@
                                         <option>Air India</option>
                                     </select>
                                 </div>
+                                <div class="passengers">
+                                    <span><i class="fas fa-user"></i></span>
+                                    <span><span id="a-value">1</span> adults</span><span class="vert-line">|</span>
+                                    <span><span id="c-value">0</span> children</span>
+                                    <div class="detail-content passenger-details">
+                                        <div class="row">
+                                            <div class="col-6 col-sm-6 col-md-6">
+                                                <label>Adults</label>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-6">
+                                                <input type="number" min="0" id="adults" onchange="getNumbers(this.id)" />
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-6">
+                                                <label class="position-relative">
+                                                    Children
+                                                    <p class="child-age">Ages 0-17</p>
+                                                </label>
+                                                <div id="age-box" class="age-box">
+                                                    <input type="number" min="0" max="17" id="age-1" placeholder="Age" class="age"/>
+                                                    <input type="number" min="0" max="17" id="age-2" placeholder="Age" class="age"/>
+                                                    <input type="number" min="0" max="17" id="age-3" placeholder="Age" class="age"/>
+                                                    <input type="number" min="0" max="17" id="age-4" placeholder="Age" class="age"/>
+                                                    <input type="number" min="0" max="17" id="age-5" placeholder="Age" class="age"/>
+                                                    <input type="number" min="0" max="17" id="age-6" placeholder="Age" class="age"/>
+                                                    <input type="number" min="0" max="17" id="age-7" placeholder="Age" class="age"/>
+                                                    <input type="number" min="0" max="17" id="age-8" placeholder="Age" class="age"/>
+                                                    <input type="number" min="0" max="17" id="age-9" placeholder="Age" class="age"/>
+                                                    <input type="number" min="0" max="17" id="age-10" placeholder="Age" class="age"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-6">
+                                                <input type="number" min="0" max="10" id="children" onchange="getNumbers(this.id)" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            
                             <div class="box-container">
                                 
                                 <div class="box">
@@ -157,7 +186,7 @@
                                     <div>
                                         <p class="text">RETURN</p>
                                         <h1 class="main-title">
-                                            <input type="date" class="flight-date" />
+                                            <input type="date" id="return" class="flight-date" disabled />
                                         </h1>
                                         <p class="text">
                                             <span class="prev">Prev</span>

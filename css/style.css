@@ -602,6 +602,7 @@ input[type=number] {
     padding: 0;
     font-size: 22px;
     font-weight: 600;
+    width: 100%;
 }
 .airport-city:focus{
     outline: none;
@@ -1231,6 +1232,47 @@ input[type=number] {
 .date-price .room-price{
     font-weight: 600;
 }
+.passengers{
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+    padding: 0 8px;
+    border-radius: 6px;
+    position: relative;
+    justify-content: space-between;
+}
+.passenger-details{
+    width: 100%;
+    left: 0;
+    top: 25px;
+}
+.passengers:hover .detail-content{
+    display: block;
+}
+.goto-payment-box{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.goto-payment{
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+}
+.got-payment-btn{
+    display: flex;
+    justify-content: space-between;
+}
+.goto-payment span{
+    font-size: 18px;
+}
+.goto-payment .txt{
+    font-weight: 600;
+}
+.goto-payment p{
+    font-size: 12px;
+    font-weight: 600;
+}
 @media screen and (min-width: 281px){
     .date-price .day{
         font-size: 14px;
@@ -1438,8 +1480,28 @@ input[type=number] {
     .timer{
         font-size: 14px;
     }
+    .passengers{
+        flex-direction: column;
+    }
+    .vert-line{
+        display: none;
+    }
+    .selects{
+        align-items: center;
+    }
+    .passenger-details{
+        width: 200px;
+        left: -84%;
+        top: 74px;
+    }
 }
 @media screen and (min-width: 992px){
+    .detail-content{
+        top: 32px;
+    }
+    .passengers{
+        width: 200px;
+    }
     .wrapper{
         margin-top: 0;
     }
@@ -1538,6 +1600,17 @@ input[type=number] {
     .det-content{
         margin-right: 0 !important;
     }
+    .passengers{
+        flex-direction: row;
+    }
+    .vert-line{
+        display: inline;
+    }
+    .passenger-details{
+        width: 100%;
+        left: 0;
+        top: 26px;
+    }
 }
 @media screen and (min-width: 1025px){
     .main-title {
@@ -1606,6 +1679,12 @@ input[type=number] {
     }
     .price-by input{
         width: 50%;
+    }
+    .detail-content{
+        top: 26px;
+    }
+    .passenger-details{
+        top: 26px;
     }
 }
 @media screen and (min-width: 1281px){
