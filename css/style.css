@@ -1254,6 +1254,9 @@ input[type=number] {
     justify-content: center;
     display: flex;
 }
+.marginTB{
+    margin: 6px 0;
+}
 .goto-payment{
     background: #fff;
     padding: 16px;
@@ -1272,6 +1275,9 @@ input[type=number] {
 .goto-payment p{
     font-size: 12px;
     font-weight: 600;
+}
+.fields-in-contact{
+    width: 100%;
 }
 @media screen and (min-width: 281px){
     .date-price .day{
@@ -1377,6 +1383,9 @@ input[type=number] {
     }
 }
 @media screen and (min-width: 520px){
+    .fields-in-contact{
+        width: auto;
+    }
     .guest-details, .room-info{
         padding: 8px 24px;
     }

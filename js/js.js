@@ -258,13 +258,15 @@ var loadInfoBox = () => {
     if(totalPassengers < 2){
         var infoFields = `<div class="input-fields">
                             <select class="form-select">
-                                <option value="0">Title</option>
-                                <option value="1">Mr</option>
-                                <option value="2">Ms</option>
-                                <option value="3">Mrs</option>
+                                <option value="0">Gender</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                                <option value="3">Other</option>
                             </select>
-                            <input type="text" class="form-control name" placeholder="First Name & Middle Name" />
-                            <input type="text" class="form-control" placeholder="Last Name"/>
+                            <input type="text" class="form-control name" placeholder="First Name" />
+                            <input type="text" class="form-control name" placeholder="Middle Name" />
+                            <input type="text" class="form-control name" placeholder="Last Name"/>
+                            <input type="text" class="form-control" placeholder="Date of Birth" onfocus="(this.type='date')"/>
                         </div>`;
             $('#passengers-info').append(infoFields);
     }
@@ -273,13 +275,15 @@ var loadInfoBox = () => {
             var infoFields = `<div class="adult">P-${i+1}</div>
                                 <div class="input-fields">
                                     <select class="form-select">
-                                        <option value="0">Title</option>
-                                        <option value="1">Mr</option>
-                                        <option value="2">Ms</option>
-                                        <option value="3">Mrs</option>
+                                        <option value="0">Gender</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                        <option value="3">Other</option>
                                     </select>
-                                    <input type="text" class="form-control name" placeholder="First Name & Middle Name" />
-                                    <input type="text" class="form-control" placeholder="Last Name"/>
+                                    <input type="text" class="form-control name" placeholder="First Name" />
+                                    <input type="text" class="form-control name" placeholder="Middle Name" />
+                                    <input type="text" class="form-control name" placeholder="Last Name"/>
+                                    <input type="text" class="form-control" placeholder="Date of Birth" onfocus="(this.type='date')"/>
                                 </div>`;
             $('#passengers-info').append(infoFields);
         }
