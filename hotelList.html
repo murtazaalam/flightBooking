@@ -67,52 +67,186 @@
                         <div class="details guest-info">
                             <div class="guest-detail">
                                 <span><i class="fas fa-user"></i></span>
-                                <span><span id="a-value">2</span> adults</span>|
-                                <span><span id="c-value">0</span> children</span>|
-                                <span><span id="g-value">0</span> guest</span>|
-                                <span><span id="r-value">1</span> room</span>
+                                <span><span id="ha-value">1</span> room</span>|
+                                <span><span id="hg-value">0</span> Guest</span>
                             </div>
-                            <div class="detail-content det-content">
-                                <div class="row">
-                                    <div class="col-6 col-sm-6 col-md-6">
-                                        <label>Adults</label>
+                            <div class="detail-content hotel-guest hotel-list-guest">
+                                <div id="room-1">
+                                    <h4 class="room-head">Room <span>1</span></h4>
+                                    <div class="value-aria">
+                                        <label class="marginRight58">Adult</label>
+                                        <input type="number" value="0" min="0" max="10" id="r-1-a" />
                                     </div>
-                                    <div class="col-6 col-sm-6 col-md-6">
-                                        <input type="number" min="0" id="adults" onchange="getNumbers(this.id)" />
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-6">
-                                        <label class="position-relative">
-                                            Children
-                                            <p class="child-age">Ages 0-17</p>
-                                        </label>
-                                        <div id="age-box" class="age-box">
-                                            <input type="number" min="0" max="17" id="age-1" placeholder="Age" class="age"/>
-                                            <input type="number" min="0" max="17" id="age-2" placeholder="Age" class="age"/>
-                                            <input type="number" min="0" max="17" id="age-3" placeholder="Age" class="age"/>
-                                            <input type="number" min="0" max="17" id="age-4" placeholder="Age" class="age"/>
-                                            <input type="number" min="0" max="17" id="age-5" placeholder="Age" class="age"/>
-                                            <input type="number" min="0" max="17" id="age-6" placeholder="Age" class="age"/>
-                                            <input type="number" min="0" max="17" id="age-7" placeholder="Age" class="age"/>
-                                            <input type="number" min="0" max="17" id="age-8" placeholder="Age" class="age"/>
-                                            <input type="number" min="0" max="17" id="age-9" placeholder="Age" class="age"/>
-                                            <input type="number" min="0" max="17" id="age-10" placeholder="Age" class="age"/>
+                                    <div class="value-aria d-inline-block">
+                                        <div class="d-flex">
+                                            <label class="marginRight12">Child(3-12y)</label>
+                                            <input type="number" value="0" min="0" max="5" id="r-1-c" 
+                                                onchange="getChildAge(this.id, 1)" />
+                                        </div>
+                                        <div class="hide-room r-1">
+                                            <input type="number" placeholder="Age 1" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-1">
+                                            <input type="number" placeholder="Age 2" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-1">
+                                            <input type="number" placeholder="Age 3" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-1">
+                                            <input type="number" placeholder="Age 4" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-1">
+                                            <input type="number" placeholder="Age 5" min="3" max="17" />
                                         </div>
                                     </div>
-                                    <div class="col-6 col-sm-6 col-md-6">
-                                        <input type="number" min="0" max="10" id="children" onchange="getNumbers(this.id)" />
+                                    <div class="value-aria">
+                                        <label class="marginRight12">Infant(0-2y)</label>
+                                        <input type="number" value="0" min="0" max="3" id="r-1-i" />
                                     </div>
-                                    <div class="col-6 col-sm-6 col-md-6">
-                                        <label>Guests</label>
+                                </div>
+                                <div id="room-2" class="hide-room">
+                                    <h4 class="room-head">Room <span>2</span></h4>
+                                    <div class="value-aria">
+                                        <label class="marginRight58">Adult</label>
+                                        <input type="number" value="0" min="0" max="10" id="r-2-a" />
                                     </div>
-                                    <div class="col-6 col-sm-6 col-md-6">
-                                        <input type="number" min="0" id="guests" onchange="getNumbers(this.id)" />
+                                    <div class="value-aria d-inline-block">
+                                        <div class="d-flex">
+                                            <label class="marginRight12">Child(3-12y)</label>
+                                            <input type="number" value="0" min="0" max="5" id="r-2-c"
+                                            onchange="getChildAge(this.id, 2)" />
+                                        </div>
+                                        
+                                        <div class="hide-room r-2">
+                                            <input type="number" placeholder="Age 1" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-2">
+                                            <input type="number" placeholder="Age 2" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-2">
+                                            <input type="number" placeholder="Age 3" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-2">
+                                            <input type="number" placeholder="Age 4" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-2">
+                                            <input type="number" placeholder="Age 5" min="3" max="17" />
+                                        </div>
                                     </div>
-                                    <div class="col-6 col-sm-6 col-md-6">
-                                        <label>Rooms</label>
+                                    <div class="value-aria">
+                                        <label class="marginRight12">Infant(0-2y)</label>
+                                        <input type="number" value="0" min="0" max="3" id="r-2-i" />
                                     </div>
-                                    <div class="col-6 col-sm-6 col-md-6">
-                                        <input type="number" min="0" id="rooms" onchange="getNumbers(this.id)" />
+                                </div>
+                                <div id="room-3" class="hide-room">
+                                    <h4 class="room-head">Room <span>3</span></h4>
+                                    <div class="value-aria">
+                                        <label class="marginRight58">Adult</label>
+                                        <input type="number" value="0" min="0" max="10" id="r-3-a" />
                                     </div>
+                                    <div class="value-aria d-inline-block">
+                                        <div class="d-flex">
+                                            <label class="marginRight12">Child(3-12y)</label>
+                                            <input type="number" value="0" min="0" max="5" id="r-3-c" 
+                                            onchange="getChildAge(this.id, 3)"/>
+                                        </div>
+                                        <div class="hide-room r-3">
+                                            <input type="number" placeholder="Age 1" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-3">
+                                            <input type="number" placeholder="Age 2" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-3">
+                                            <input type="number" placeholder="Age 3" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-3">
+                                            <input type="number" placeholder="Age 4" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-3">
+                                            <input type="number" placeholder="Age 5" min="3" max="17" />
+                                        </div>
+                                    </div>
+                                    <div class="value-aria">
+                                        <label class="marginRight12">Infant(0-2y)</label>
+                                        <input type="number" value="0" min="0" max="3" id="r-3-i" />
+                                    </div>
+                                </div>
+                                <div id="room-4" class="hide-room">
+                                    <h4 class="room-head">Room <span>4</span></h4>
+                                    <div class="value-aria">
+                                        <label class="marginRight58">Adult</label>
+                                        <input type="number" value="0" min="0" max="10" id="r-4-a" />
+                                    </div>
+                                    <div class="value-aria d-inline-block">
+                                        <div class="d-flex">
+                                            <label class="marginRight12">Child(3-12y)</label>
+                                            <input type="number" value="0" min="0" max="5" id="r-4-c" 
+                                            onchange="getChildAge(this.id, 4)"/>
+                                        </div>
+                                        <div class="hide-room r-4">
+                                            <input type="number" placeholder="Age 1" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-4">
+                                            <input type="number" placeholder="Age 2" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-4">
+                                            <input type="number" placeholder="Age 3" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-4">
+                                            <input type="number" placeholder="Age 4" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-4">
+                                            <input type="number" placeholder="Age 5" min="3" max="17" />
+                                        </div>
+                                    </div>
+                                    <div class="value-aria">
+                                        <label class="marginRight12">Infant(0-2y)</label>
+                                        <input type="number" value="0" min="0" max="3" id="r-4-i" />
+                                    </div>
+                                </div>
+                                <div id="room-5" class="hide-room">
+                                    <h4 class="room-head">Room <span>5</span></h4>
+                                    <div class="value-aria">
+                                        <label class="marginRight58">Adult</label>
+                                        <input type="number" value="0" min="0" max="10" id="r-5-a" />
+                                    </div>
+                                    <div class="value-aria d-inline-block">
+                                        <div class="d-flex">
+                                            <label class="marginRight12">Child(3-12y)</label>
+                                            <input type="number" value="0" min="0" max="5" id="r-5-c" 
+                                            onchange="getChildAge(this.id, 5)"/>
+                                        </div>
+                                        <div class="hide-room r-5">
+                                            <input type="number" placeholder="Age 1" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-5">
+                                            <input type="number" placeholder="Age 2" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-5">
+                                            <input type="number" placeholder="Age 3" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-5">
+                                            <input type="number" placeholder="Age 4" min="3" max="17" />
+                                        </div>
+                                        <div class="hide-room r-5">
+                                            <input type="number" placeholder="Age 5" min="3" max="17" />
+                                        </div>
+                                    </div>
+                                    <div class="value-aria">
+                                        <label class="marginRight12">Infant(0-2y)</label>
+                                        <input type="number" value="0" min="0" max="3" id="r-5-i" />
+                                    </div>
+                                </div>
+                                <div class="btn-box">
+                                    <div class="btn-aria">
+                                        <button type="button" class="btn-add-room" onclick="addRoom()">
+                                            Add Room
+                                        </button>
+                                        <button type="button" class="btn-remove-room" id="remove-room" onclick="removeRoom()">
+                                            Remove Room
+                                        </button>
+                                    </div>
+                                    <button type="button" class="btn-ok" onclick="okRoom()">Ok</button>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,8 @@
 var detailAriaId;
+let addClickCounter = 1;
 let totalPassengers = 0;
+let totalGuest = 0;
+
 var swap = (flight) =>{
     if(flight == "flight-search"){
         var originCity = document.getElementById("origin-city").value;
@@ -102,6 +105,9 @@ var getNumbers = (id) => {
     else if(id == "rooms"){
         document.getElementById("r-value").innerText = document.getElementById("rooms").value;
     }
+    else if(id == "infant"){
+        document.getElementById("i-value").innerText = document.getElementById("infant").value;
+    }
 }
 var getValues = () => {
     window.localStorage.getItem("Adults") ? document.getElementById("a-value").innerText = window.localStorage.getItem("Adults")
@@ -112,13 +118,9 @@ var getValues = () => {
 
     var aValue = document.getElementById("a-value").innerHTML;
     var cValue = document.getElementById("c-value").innerHTML;
-    var gValue = document.getElementById("g-value").innerHTML;
-    var rValue = document.getElementById("r-value").innerHTML;
 
     document.getElementById("adults").value = aValue;
     document.getElementById("children").value = cValue;
-    document.getElementById("guests").value = gValue;
-    document.getElementById("rooms").value = rValue;
 
 }
 var showHideDetail = (id) => {
@@ -287,6 +289,89 @@ var loadInfoBox = () => {
                                 </div>`;
             $('#passengers-info').append(infoFields);
         }
+    }
+    
+}
+var addRoom = () => {
+    if(addClickCounter == 1){
+        document.getElementById("remove-room").style.display = "block";
+    }
+    addClickCounter = addClickCounter+1;
+    if(addClickCounter == 2){
+        document.getElementById("room-2").style.display = "block";
+        document.getElementById("ha-value").innerHTML = addClickCounter;
+    }
+    else if(addClickCounter == 3){
+        document.getElementById("room-3").style.display = "block";
+        document.getElementById("ha-value").innerHTML = addClickCounter;
+    }
+    else if(addClickCounter == 4){
+        document.getElementById("room-4").style.display = "block";
+        document.getElementById("ha-value").innerHTML = addClickCounter;
+    }
+    else if(addClickCounter == 5){
+        document.getElementById("room-5").style.display = "block";
+        document.getElementById("ha-value").innerHTML = addClickCounter;
+    }
+    else{
+        addClickCounter = 5;
+    }
+}
+var removeRoom = () => {
+    if(addClickCounter == 2){
+        document.getElementById("room-2").style.display = "none";
+        document.getElementById("remove-room").style.display = "none";
+        document.getElementById("ha-value").innerHTML = addClickCounter-1;
+        addClickCounter = addClickCounter - 1;
+        document.getElementById("r-2-a").value = 0;
+        document.getElementById("r-2-c").value = 0;
+        document.getElementById("r-2-i").value = 0;
+    }
+    else if(addClickCounter == 3){
+        document.getElementById("room-3").style.display = "none";
+        document.getElementById("ha-value").innerHTML = addClickCounter-1;
+        addClickCounter = addClickCounter - 1;
+        document.getElementById("r-3-a").value = 0;
+        document.getElementById("r-3-c").value = 0;
+        document.getElementById("r-3-i").value = 0;
+        
+    }
+    else if(addClickCounter == 4){
+        document.getElementById("room-4").style.display = "none";
+        document.getElementById("ha-value").innerHTML = addClickCounter-1;
+        addClickCounter = addClickCounter - 1;
+        document.getElementById("r-4-a").value = 0;
+        document.getElementById("r-4-c").value = 0;
+        document.getElementById("r-4-i").value = 0;
+    }
+    else if(addClickCounter == 5){
+        document.getElementById("room-5").style.display = "none";
+        document.getElementById("ha-value").innerHTML = addClickCounter-1;
+        addClickCounter = addClickCounter - 1;
+        document.getElementById("r-5-a").value = 0;
+        document.getElementById("r-5-c").value = 0;
+        document.getElementById("r-5-i").value = 0;
+    }
+}
+
+var okRoom = () => {
+    var total = 0;
+    for(var i = 0; i < 5; i++){
+        total = total + Number(document.getElementById(`r-${i+1}-a`).value) + 
+                        Number(document.getElementById(`r-${i+1}-c`).value) + 
+                        Number(document.getElementById(`r-${i+1}-i`).value);
+    }
+    document.getElementById("hg-value").innerText = total;
+}
+var getChildAge = (id, count) => {
+    var childCount = document.getElementById(id).value;
+    
+    var ageBox = document.getElementsByClassName(`r-${count}`);
+    for(i = 0; i<childCount; i++){
+        ageBox[i].style.display = "inline-block";
+    }
+    for(i = childCount; i<5; i++){
+        ageBox[i].style.display = "none";
     }
     
 }

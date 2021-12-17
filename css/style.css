@@ -303,7 +303,7 @@ body{
     padding-top: 20px;
 }
 .date-box{
-    padding: 0 4px;
+    padding: 1px 4px;
     border: 1px solid;
     border-radius: 4px;
     margin-bottom: 8px;
@@ -347,7 +347,7 @@ body{
 }
 .details{
     border: 1px solid;
-    padding: 0 4px;
+    padding: 1px 4px;
     border-radius: 4px;
     cursor: pointer;
     position: relative;
@@ -376,10 +376,78 @@ body{
     box-shadow: 0 2px 16px rgb(0 0 0 / 15%);
     background: #fff;
     padding: 10px;
-    top: 50px;
+    top: 51px;
     left: 0;
     border-radius: 4px;
     z-index: 1;
+}
+.details ul{
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+.details ul li{
+    margin: 0 4px;
+    padding: 4px 11px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.btn-add-room{
+    margin-right: 10px;
+    padding: 2px 12px;
+    border: 1px solid grey;
+    font-weight: 600;
+    font-size: 14px;
+}
+.btn-remove-room{
+    display: none;
+    padding: 2px 12px;
+    border: 1px solid #f05f5f;
+    font-weight: 600;
+    font-size: 14px;
+}
+.btn-box{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.hide-room{
+    display: none;
+}
+.show-room{
+    display: block;
+}
+.active-li{
+    background: #0000d9;
+    color: #fff;
+}
+.details ul li:hover{
+    background: #0000d9;
+    color: #fff;
+}
+.marginRight58{
+    margin-right: 58px !important;
+}
+.marginRight12{
+    margin-right: 12px !important;
+}
+.value-aria{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.btn-aria{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.btn-ok{
+    border: 1px solid #27e727;
+    font-weight: 600;
+    padding: 0px 12px;
+    font-size: 12px;
 }
 .currency{
     display: none;
@@ -1223,6 +1291,10 @@ input[type=number] {
     border-bottom: 1px solid lightgray;
     padding-bottom: 10px;
 }
+.room-head{
+    font-size: 20px;
+    margin: 0;
+}
 .total-price-info{
     text-align: right;
 }
@@ -1279,6 +1351,17 @@ input[type=number] {
 .fields-in-contact{
     width: 100%;
 }
+.hotel-guest{
+    width: 266px;
+    left: -16px;
+    top: 28px;
+}
+.hotel-guest label{
+    font-weight: 400;
+}
+.hotel-list-guest{
+    top: 41px;
+}
 @media screen and (min-width: 281px){
     .date-price .day{
         font-size: 14px;
@@ -1289,8 +1372,27 @@ input[type=number] {
     .flight-search{
         right: 12%;
     }
+    .hotel-guest {
+        width: 274px;
+        left: 0px;
+        top: 28px;
+    }
+    .hotel-list-guest{
+        top: 41px;
+    }
 }
 @media screen and (min-width: 321px){
+    .hotel-guest {
+        width: 100%;
+        left: 0px;
+        top: 28px;
+    }
+    .btn-box{
+        flex-direction: row;
+    }
+    .btn-aria{
+        margin-bottom: 0;
+    }
     .det-content{
         top: 43px !important;
     }
@@ -1328,6 +1430,9 @@ input[type=number] {
     .traveller-info .text-box .payment{
         margin: 0 8px;
     }
+    .hotel-list-guest{
+        top: 44px;
+    }
 }
 @media screen and (min-width: 361px){
     .f-box .arrow-icon{
@@ -1354,7 +1459,7 @@ input[type=number] {
         margin: 0 10px;
     }
     .detail-content{
-        top: 28px;
+        top: 29px;
     }
     .luggage{
         font-size: 11px;
@@ -1376,6 +1481,9 @@ input[type=number] {
         width: 30%;
         margin: 0 4px;
     }
+    .hotel-list-guest{
+        top: 44px;
+    }
 }
 @media screen and (min-width: 414px){
     .arc2{
@@ -1383,6 +1491,9 @@ input[type=number] {
     }
 }
 @media screen and (min-width: 520px){
+    .hotel-guest{
+        width: 320px;
+    }
     .fields-in-contact{
         width: auto;
     }
@@ -1501,15 +1612,15 @@ input[type=number] {
     .passenger-details{
         width: 200px;
         left: -84%;
-        top: 74px;
+        top: 98px;
     }
 }
 @media screen and (min-width: 992px){
     .detail-content{
-        top: 32px;
+        top: 33px;
     }
     .passengers{
-        width: 200px;
+        width: 250px;
     }
     .wrapper{
         margin-top: 0;
@@ -1620,6 +1731,13 @@ input[type=number] {
         left: 0;
         top: 26px;
     }
+    .hotel-box{
+        display: flex;
+        justify-content: space-between;
+    }
+    .hotel-list-guest{
+        top: 40px;
+    }
 }
 @media screen and (min-width: 1025px){
     .main-title {
@@ -1658,7 +1776,7 @@ input[type=number] {
         font-size: 22px;
     }       
     .detail-content{
-        top: 26px;
+        top: 27px;
     }
     .hotel-box{
         display: flex;
@@ -1689,11 +1807,11 @@ input[type=number] {
     .price-by input{
         width: 50%;
     }
-    .detail-content{
-        top: 26px;
-    }
     .passenger-details{
         top: 26px;
+    }
+    .hotel-list-guest{
+        top: 41px;
     }
 }
 @media screen and (min-width: 1281px){
