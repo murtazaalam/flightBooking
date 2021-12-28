@@ -707,7 +707,7 @@ input[type=number] {
     cursor: pointer;
 }
 .detail-aria .tab-menu .active{
-    border-bottom: 2px solid #1382e3;
+    border-bottom: 3px solid #1382e3;
 }
 .detail-aria .d-box{
     display: flex;
@@ -1448,6 +1448,29 @@ input[type="range"]:active::-webkit-slider-thumb{
 }
 .far-box .up-txt{
     font-size: 12px;
+}
+.confirm-info .txt{
+    font-weight: 600;
+}
+.note-txt{
+    font-size: 12px;
+}
+.c-txt{
+    font-size: 14px;
+}
+.p-detail-box{
+    box-shadow: 4px 2px 10px grey;
+    padding: 8px;
+    margin: 10px 0 0 0;
+    border-radius: 8px;
+}
+.p-detail-box .t-txt{
+    font-size: 14px;
+    color: #707070;
+}
+.p-detail-box .t-value{
+    font-size: 14px;
+    font-weight: 600;
 }
 @media screen and (min-width: 281px){
     .date-price .day{

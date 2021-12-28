@@ -137,7 +137,7 @@ var showHideDetail = (id) => {
     displayProperty[1].trim() == "none;" ? document.getElementById(detailAriaId).style.display = "block" : 
             document.getElementById(detailAriaId).style.display = "none";
 
-    //replace 2 with total number of flights coming from api
+    //TODO : Note - Replace 2 with total number of flights coming from api
     for(var i = 0; i < 2; i++){
         if(flightNo !=  (i+1)){
             document.getElementById(`flight-${i+1}-detail`).style.display = "none"
@@ -221,14 +221,158 @@ var openModal = (id) => {
         document.getElementById("extra-items").style.display = "block";
         document.getElementById("flight-info").style.display = "none";
         document.getElementById("modal-dialog").classList.remove("modal-lg");
+        document.getElementById("con-booking").style.display = "none";
+        document.getElementById("confirm-info").style.display = "none";
+        
     }
     else if(id == "i-button"){
         document.getElementById("extraItemModalLabel").innerText = "Flight Details";
         document.getElementById("extra-items").style.display = "none";
         document.getElementById("flight-info").style.display = "block";
         document.getElementById("modal-dialog").classList.add("modal-lg");
+        document.getElementById("con-booking").style.display = "none";
+        document.getElementById("confirm-info").style.display = "none";
+    }
+    else if(id == "continue"){
+        
+        document.getElementById("extraItemModalLabel").innerText = "Review Details";
+        document.getElementById("modal-dialog").classList.remove("modal-lg");
+        document.getElementById("extra-items").style.display = "none";
+        document.getElementById("flight-info").style.display = "none";
+        document.getElementById("con-booking").style.display = "block";
+        document.getElementById("confirm-info").style.display = "block";
+
+        let validation = true;
+        let error = false;
+
+        var divContent = document.getElementById("pInfo");
+        while(divContent.firstChild){
+            divContent.removeChild(divContent.firstChild);
+        }
+
+        for(var i = 0; i < totalPassengers; i++){
+
+            var firstName = document.getElementById(`f${i}`).value;
+            var middleName = document.getElementById(`m${i}`).value;
+            var lastName = document.getElementById(`l${i}`).value;
+            var dob = document.getElementById(`d${i}`).value;
+            var gender = document.getElementById(`gender${i}`).value;
+            document.getElementById(`f${i}`).style.borderColor = "#ced4da";
+            document.getElementById(`m${i}`).style.borderColor = "#ced4da"
+            document.getElementById(`l${i}`).style.borderColor = "#ced4da"
+            document.getElementById(`d${i}`).style.borderColor = "#ced4da"
+            document.getElementById(`gender${i}`).style.borderColor = "#ced4da"
+
+            if(firstName == ""){
+                error = true;
+                document.getElementById(`f${i}`).style.borderColor = "red";
+            }
+            if(middleName == ""){
+                error = true;
+                document.getElementById(`m${i}`).style.borderColor = "red";
+            }
+            if(lastName == ""){
+                error = true;
+                document.getElementById(`l${i}`).style.borderColor = "red";
+            }
+            if(dob == ""){
+                error = true;
+                document.getElementById(`d${i}`).style.borderColor = "red";
+            }
+            if(gender == 0){
+                error = true;
+                document.getElementById(`gender${i}`).style.borderColor = "red";
+            }
+            if(error == false){
+                var pInfo = `<div class="p-detail-box">
+                                <h6>Passenger ${i+1}</h6>
+                                <div>
+                                    <table class="table table-borderless">
+                                        <thead></thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="t-txt">
+                                                    First & Middle Name
+                                                </td>
+                                                <td class="t-value">
+                                                    ${firstName} ${middleName}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="t-txt">
+                                                    Last Name
+                                                </td>
+                                                <td class="t-value">
+                                                    ${lastName}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="t-txt">
+                                                    Gender
+                                                </td>
+                                                <td class="t-value">
+                                                    ${gender == 0 && "Invalid" || gender == 1 && "Male" ||
+                                                    gender == 2 && "Female" || gender == 3 && "Other"} 
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="t-txt">
+                                                    DOB
+                                                </td>
+                                                <td class="t-value">
+                                                    ${dob}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>`;
+                $("#pInfo").append(pInfo);
+            }
+        }
+
+        if(error == false) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var email = document.getElementById("email")
+            var code = document.getElementById("code")
+            var mobile = document.getElementById("mobile")
+            var city = document.getElementById("city")
+            email.style.borderColor = "#ced4da";
+            code.style.borderColor = "#ced4da";
+            mobile.style.borderColor = "#ced4da";
+            city.style.borderColor = "#ced4da";
+            if(email.value == ""){
+                validation = false;
+                email.style.borderColor = "red";
+            }
+            if(!email.value.match(mailformat)){
+                validation = false;
+                email.style.borderColor = "red";
+            }
+            if(code.value == ""){
+                validation = false;
+                code.style.borderColor = "red";
+            }
+            if(mobile.value == ""){
+                validation = false;
+                mobile.style.borderColor = "red";
+            }
+            if(city.value == ""){
+                validation = false;
+                city.style.borderColor = "red";
+            }
+            if(mobile.value.length != 10){
+                validation = false;
+                mobile.style.borderColor = "red";
+            }
+            if(validation == true){
+                $("#extraItemModal").modal("show");
+            }
+        }
     }
 }
+
 var searchByStops = (id) => {
     
     if(id == "zero-stop"){
@@ -264,40 +408,35 @@ var selectTripType = () => {
 }
 var loadInfoBox = () => {
     totalPassengers = Number(window.localStorage.getItem("Adults"))+Number(window.localStorage.getItem("Children"));
-    if(totalPassengers < 2){
-        var infoFields = `<div class="input-fields">
-                            <select class="form-select">
-                                <option value="0">Gender</option>
-                                <option value="1">Male</option>
-                                <option value="2">Female</option>
-                                <option value="3">Other</option>
-                            </select>
-                            <input type="text" class="form-control name" placeholder="First Name" />
-                            <input type="text" class="form-control name" placeholder="Middle Name" />
-                            <input type="text" class="form-control name" placeholder="Last Name"/>
-                            <input type="text" class="form-control" placeholder="Date of Birth" onfocus="(this.type='date')"/>
-                        </div>`;
-            $('#passengers-info').append(infoFields);
+    for(var i = 0; i < totalPassengers; i++){
+        var infoFields = `<div class="adult">P-${i+1}</div>
+                            <div class="input-fields">
+                                <select class="form-select" id="gender${i}" onchange="checkValue(this.id)" required>
+                                    <option value="0" selected disabled>Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                    <option value="3">Other</option>
+                                </select>
+                                <input type="text" class="form-control name" placeholder="First Name" id="f${i}" 
+                                oninput="checkValue(this.id)" required />
+                                <input type="text" class="form-control name" placeholder="Middle Name" id="m${i}"
+                                oninput="checkValue(this.id)" required />
+                                <input type="text" class="form-control name" placeholder="Last Name" id="l${i}"
+                                oninput="checkValue(this.id)" required />
+                                <input type="text" class="form-control" placeholder="Date of Birth" id="d${i}" required
+                                 onfocus="(this.type='date')" oninput="checkValue(this.id)" />
+                            </div>`;
+        $('#passengers-info').append(infoFields);
     }
-    else {
-        for(var i = 0; i < totalPassengers; i++){
-            var infoFields = `<div class="adult">P-${i+1}</div>
-                                <div class="input-fields">
-                                    <select class="form-select">
-                                        <option value="0">Gender</option>
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
-                                        <option value="3">Other</option>
-                                    </select>
-                                    <input type="text" class="form-control name" placeholder="First Name" />
-                                    <input type="text" class="form-control name" placeholder="Middle Name" />
-                                    <input type="text" class="form-control name" placeholder="Last Name"/>
-                                    <input type="text" class="form-control" placeholder="Date of Birth" onfocus="(this.type='date')"/>
-                                </div>`;
-            $('#passengers-info').append(infoFields);
-        }
+}
+var checkValue = (id) => {
+    var value = document.getElementById(id).value;
+    if(value == ""){
+        document.getElementById(id).style.borderColor = "red"
     }
-    
+    else{
+        document.getElementById(id).style.borderColor = "#ced4da";
+    }
 }
 var addRoom = () => {
     if(addClickCounter == 1){

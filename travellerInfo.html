@@ -163,27 +163,31 @@
                                     <div class="adult contact-txt">Contact Information</div>
                                     <div>
                                         <div class="d-inline-block marginTB fields-in-contact">
-                                            <input type="text" class="form-control" placeholder="Email"/>
+                                            <input type="email" class="form-control" id="email" placeholder="Email*" 
+                                            oninput="checkValue(this.id)" required/>
                                         </div>
                                         <div class="d-inline-block marginTB fields-in-contact">
-                                            <input type="text" class="form-control code" placeholder="Country Code(+91)"/>
+                                            <input type="number" class="form-control code" id="code" placeholder="Country Code(+91)*"
+                                            oninput="checkValue(this.id)" required/>
                                         </div>
                                         <div class="d-inline-block marginTB fields-in-contact">
-                                            <input type="text" class="form-control" placeholder="Mobile Number"/>
+                                            <input type="number" class="form-control" id="mobile" placeholder="Mobile Number*"
+                                            oninput="checkValue(this.id)" required/>
                                         </div>
                                         <div class="d-inline-block marginTB fields-in-contact">
-                                            <input type="text" class="form-control" placeholder="City"/>
+                                            <input type="text" class="form-control" id="city" placeholder="City*"
+                                            oninput="checkValue(this.id)" required/>
                                         </div>
                                         <div class="d-inline-block marginTB fields-in-contact">
-                                            <select class="form-select code">
-                                                <option value="0">Country Code</option>
-                                                <option value="0">IN</option>
-                                                <option value="0">AU</option>
-                                                <option value="0">US</option>
+                                            <select class="form-select code" required>
+                                                <option value="0" selected disabled>Country Code</option>
+                                                <option value="1">IN</option>
+                                                <option value="2">AU</option>
+                                                <option value="3">US</option>
                                             </select>
                                         </div>
                                         <div class="d-inline-block marginTB fields-in-contact">
-                                            <input type="text" class="form-control" placeholder="Nationality"/>
+                                            <input type="text" class="form-control" placeholder="Nationality" required/>
                                         </div>
                                         <div class="marginTB">
                                             <textarea type="text" class="form-control" placeholder="Address Line 1"></textarea>
@@ -226,7 +230,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="btn-continue">Continue</button>
+                            <button type="submit" class="btn-continue" onclick="openModal(this.id)" id="continue">
+                                Continue
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -384,9 +390,29 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="confirm-info" class="confirm-info">
+                            <p class="note-txt">
+                                <b>Note : </b>Please insure that the spelling of your name and other details match with your travel
+                                document/govt. ID, as these can not be changed later. Errors might lead to cancellation penalties.
+                            </p>
+                            <div>
+                                <div>
+                                    <span class="c-txt">PNR NO : </span>
+                                    <span class="txt">123456</span>
+                                </div>
+                                <div>
+                                  <span class="c-txt">Status : </span>
+                                  <span class="txt">Hold</span>
+                                </div>
+                            </div>
+                            <div id="pInfo">
+                                
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="con-booking" onclick="booking">Continue</button>
                     </div>
                 </div>
             </div>
