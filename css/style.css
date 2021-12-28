@@ -567,16 +567,6 @@ body{
     font-weight: 600;
     margin-right: 6px;
 }
-.price-by{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0;
-    border-bottom: 0;
-}
-.price-by p{
-    margin: 0;
-}
 .r-icon{
     font-size: 14px;
 }
@@ -1362,6 +1352,103 @@ input[type=number] {
 .hotel-list-guest{
     top: 41px;
 }
+.price-by{
+    position: relative;
+    padding: 20px 0;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+input[type="range"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none;
+    position: absolute;
+    margin: auto;
+    top: 36%;
+    left: 0;
+    background: transparent;
+    pointer-events: none;
+}
+.p-slider-track,.a-slider-track,.d-slider-track{
+    width: 100%;
+    height: 5px;
+    background-color: #d5d5d5;
+    border: none !important;
+    position: absolute;
+    top: 50%;
+    border-radius: 5px;
+    left: 0;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    height: 5px;
+}
+input[type="range"]::-moz-range-track{
+    -moz-appearance: none;
+    height: 5px;
+}
+input[type="range"]::-ms-track{
+    appearance: none;
+    height: 5px;
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 1em;
+    width: 1em;
+    background-color: #3264fe;
+    cursor: pointer;
+    border-radius: 50%;
+    pointer-events: auto;
+}
+input[type="range"]::-moz-range-thumb{
+    -webkit-appearance: none;
+    height: 1em;
+    width: 1em;
+    background-color: #3264fe;
+    cursor: pointer;
+    border-radius: 50%;
+    pointer-events: auto;
+}
+input[type="range"]::-ms-thumb{
+    appearance: none;
+    height: 1em;
+    width: 1em;
+    background-color: #3264fe;
+    cursor: pointer;
+    border-radius: 50%;
+    pointer-events: auto;
+}
+input[type="range"]:active::-webkit-slider-thumb{
+    background-color: #ffffff;
+    border: 1px solid #3264fe;
+}
+.range-values{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: -6px;
+}
+.range-values p{
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-size: 14px;
+    font-weight: 600;
+}
+.far-box{
+    padding: 8px;
+    height: 168px;
+    overflow-y: auto;
+}
+.far-box p{
+    margin: 0;
+}
+.far-box .up-txt{
+    font-size: 12px;
+}
 @media screen and (min-width: 281px){
     .date-price .day{
         font-size: 14px;
@@ -1539,12 +1626,6 @@ input[type=number] {
     }
     .dep-time ul li{
         margin: 4px 0;
-    }
-    .price-by{
-        flex-direction: column;
-    }
-    .price-by input{
-        width: 100%;
     }
     .dep-time div{
         width: 100%;
@@ -1800,12 +1881,6 @@ input[type=number] {
     }
     .box{
         margin-right: 15px;
-    }
-    .price-by{
-        flex-direction: row;
-    }
-    .price-by input{
-        width: 50%;
     }
     .passenger-details{
         top: 26px;

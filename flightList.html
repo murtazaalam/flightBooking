@@ -5,10 +5,10 @@
         <link rel="stylesheet" href="css/bootstrap.css" />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/all.css" />
+        <script src="js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="js/js.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/all.js" type="text/javascript"></script>
-        <script src="js/jquery-3.6.0.min.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="container">
@@ -105,38 +105,38 @@
                             </div>
                             <div>
                                 <h5>Departure Time</h5>
-                                <div class="filter-by dep-time">
-                                    <div>Before 6AM</div>
-                                    <div>6AM - 12PM</div>
-                                    <div class="twelve">12PM - 6PM</div>
-                                    <div class="six">After 6PM</div>
+                                <div class="price-by">
+                                    <div class="range-values">
+                                        <p id="range-1">00:00</p>
+                                        <p id="range-2">23:59</p>
+                                    </div>
+                                    <div class="d-slider-track"></div>
+                                    <input type="range" min="00:00" max="23:59" value="30" id="slider-1" onInput="slideOne()"/>
+                                    <input type="range" min="00:00" max="23:59" value="70" id="slider-2" onInput="slideTwo()"/>
                                 </div>
                             </div>
                             <div>
                                 <h5>Arrival Time</h5>
-                                <div class="filter-by dep-time">
-                                    <div>Before 6AM</div>
-                                    <div>6AM - 12PM</div>
-                                    <div>12PM - 6PM</div>
-                                    <div>After 6PM</div>
+                                <div class="price-by">
+                                    <div class="range-values">
+                                        <p id="range-1">00:00</p>
+                                        <p id="range-2">23:59</p>
+                                    </div>
+                                    <div class="a-slider-track"></div>
+                                    <input type="range" min="1" max="23" value="12" id="slider-1" onInput="updateTime(value)"/>
+                                    <input type="range" min="0" max="59" value="40" id="slider-2" onInput="updateTime(value)"/>
                                 </div>
                             </div>
                             <div>
                                 <h5>Price Range</h5>
-                                <div class="filter-by price-by">
-                                    <p>
-                                        <span class="r-icon">
-                                            <i class="fas fa-rupee-sign"></i>
-                                        </span>
-                                        <span class="min-value">100</span>
-                                    </p>
-                                    <input type="text" class="range"/>
-                                    <p>
-                                        <span class="r-icon" style="margin-left: 6px;">
-                                            <i class="fas fa-rupee-sign"></i>
-                                        </span>
-                                        <span style="font-weight: 600;">1000</span>
-                                    </p>
+                                <div class="price-by">
+                                    <div class="range-values">
+                                        <p id="p-range-1">0</p>
+                                        <p id="p-range-2">100</p>
+                                    </div>
+                                    <div class="p-slider-track"></div>
+                                    <input type="range" min="0" max="100" value="30" id="p-slider-1" onInput="slideOne()"/>
+                                    <input type="range" min="0" max="100" value="70" id="p-slider-2" onInput="slideTwo()"/>
                                 </div>
                             </div>
                         </div>
@@ -299,7 +299,75 @@
                                     </div>
                                 </div>
                                 <div id="flight-1-detail-tab-3-content" style="display: none">
-                                    hello
+                                    <div class="far-box">
+                                        <p>
+                                            <span>The FareBasisCode is: <b>PO9RBINX</b></span>
+                                        </p>
+                                        <p class="up-txt">
+                                            <span>These are Instant Purchase Fares applicable for individual bookings only.</span>
+                                            <span><b>Only 1 piece checked-in baggage is allowed.</b></span>
+                                            <span>Minimum 1 Passengers and Maximum 6 Passengers are permitted to book at given point 
+                                                of time. Fares can be combined with any other fare type and product on GoAir network. 
+                                                No - Show Fee : 100% Domestic : 100% cancellation charges within 2 hours of the flight 
+                                                departure time. International: 100% cancellation charges within 4 hours of the flight 
+                                                departure time. For Economy class 
+                                            </span>
+                                        </p>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th colspan="2">Change Fees</th>
+                                                    <th colspan="2">Cancellation Fees</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <b>Number of days left for departure</b>
+                                                    </td>
+                                                    <td>
+                                                        <b>Domestic</b>
+                                                    </td>
+                                                    <td>
+                                                        <b>International</b>
+                                                    </td>
+                                                    <td>
+                                                        <b>Domestic</b>
+                                                    </td>
+                                                    <td>
+                                                        <b>International</b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Within 3 days</td>
+                                                    <td>INR 3000</td>
+                                                    <td>INR 4000</td>
+                                                    <td>INR 3500</td>
+                                                    <td>INR 5000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>More than 3 Days</td>
+                                                    <td>INR 2500</td>
+                                                    <td>INR 3500</td>
+                                                    <td>INR 3000</td>
+                                                    <td>INR 4500</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="up-txt">
+                                            For change difference in base fare and applicable taxes and surcharge per sector per 
+                                            passenger. For Business class : Change fee(Domestic) : Only difference in base fare and 
+                                            applicable taxes and surcharge Cancellation fee(Domestic) : 0-2 hours: 100% except 
+                                            taxes.up to 2 hours before scheduled departure: INR 3,000/- or Base Fare + Fuel 
+                                            Surcharge, whichever is lower shall be applicable. GoAir reserves the right to change 
+                                            the Cancellation/Change Fees from time to time without any prior intimation.
+                                        </p>
+                                        <p class="up-txt">
+                                            Subject to change without prior notice. <b>Note</b> : We should receive the request at least 
+                                            four hours prior to Airline Fare Rules Policy.
+                                        </p>
+                                    </div>
                                 </div>
                                 
                             </div>
@@ -461,7 +529,75 @@
                                     </div>
                                 </div>
                                 <div id="flight-2-detail-tab-3-content" style="display: none">
-                                    hello
+                                    <div class="far-box">
+                                        <p>
+                                            <span>The FareBasisCode is: <b>PO9RBINX</b></span>
+                                        </p>
+                                        <p class="up-txt">
+                                            <span>These are Instant Purchase Fares applicable for individual bookings only.</span>
+                                            <span><b>Only 1 piece checked-in baggage is allowed.</b></span>
+                                            <span>Minimum 1 Passengers and Maximum 6 Passengers are permitted to book at given point 
+                                                of time. Fares can be combined with any other fare type and product on GoAir network. 
+                                                No - Show Fee : 100% Domestic : 100% cancellation charges within 2 hours of the flight 
+                                                departure time. International: 100% cancellation charges within 4 hours of the flight 
+                                                departure time. For Economy class 
+                                            </span>
+                                        </p>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th colspan="2">Change Fees</th>
+                                                    <th colspan="2">Cancellation Fees</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <b>Number of days left for departure</b>
+                                                    </td>
+                                                    <td>
+                                                        <b>Domestic</b>
+                                                    </td>
+                                                    <td>
+                                                        <b>International</b>
+                                                    </td>
+                                                    <td>
+                                                        <b>Domestic</b>
+                                                    </td>
+                                                    <td>
+                                                        <b>International</b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Within 3 days</td>
+                                                    <td>INR 3000</td>
+                                                    <td>INR 4000</td>
+                                                    <td>INR 3500</td>
+                                                    <td>INR 5000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>More than 3 Days</td>
+                                                    <td>INR 2500</td>
+                                                    <td>INR 3500</td>
+                                                    <td>INR 3000</td>
+                                                    <td>INR 4500</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="up-txt">
+                                            For change difference in base fare and applicable taxes and surcharge per sector per 
+                                            passenger. For Business class : Change fee(Domestic) : Only difference in base fare and 
+                                            applicable taxes and surcharge Cancellation fee(Domestic) : 0-2 hours: 100% except 
+                                            taxes.up to 2 hours before scheduled departure: INR 3,000/- or Base Fare + Fuel 
+                                            Surcharge, whichever is lower shall be applicable. GoAir reserves the right to change 
+                                            the Cancellation/Change Fees from time to time without any prior intimation.
+                                        </p>
+                                        <p class="up-txt">
+                                            Subject to change without prior notice. <b>Note</b> : We should receive the request at least 
+                                            four hours prior to Airline Fare Rules Policy.
+                                        </p>
+                                    </div>
                                 </div>
                                 
                             </div>

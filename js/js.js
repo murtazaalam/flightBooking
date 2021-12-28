@@ -2,7 +2,12 @@ var detailAriaId;
 let addClickCounter = 1;
 let totalPassengers = 0;
 let totalGuest = 0;
+let minGap = 0;
 
+window.onload = function() {
+    slideOne();
+    slideTwo();
+}
 var swap = (flight) =>{
     if(flight == "flight-search"){
         var originCity = document.getElementById("origin-city").value;
@@ -124,20 +129,22 @@ var getValues = () => {
 
 }
 var showHideDetail = (id) => {
-    //var index = id.split("-")[1];
+    var flightNo = id.split("-")[1];
+
     detailAriaId = `${id}-detail`;
     var displayProperty = document.getElementById(detailAriaId).getAttribute("style").split(":");
 
     displayProperty[1].trim() == "none;" ? document.getElementById(detailAriaId).style.display = "block" : 
-                            document.getElementById(detailAriaId).style.display = "none";
-    // var detailAria = document.getElementsByClassName("detail-aria");
-    // console.log(index);
-    // for(i = 0; i < detailAria.length; i++){
-    //     if(index != (i+1)){
-    //         console.log("helo")
-    //         document.getElementById(`flight-${index}-detail`).style.display = "none";
-    //     }
-    // }
+            document.getElementById(detailAriaId).style.display = "none";
+
+    //replace 2 with total number of flights coming from api
+    for(var i = 0; i < 2; i++){
+        if(flightNo !=  (i+1)){
+            document.getElementById(`flight-${i+1}-detail`).style.display = "none"
+        }
+        
+    }
+    
 }
 var tabChange = (id) => {
     if(id == `${detailAriaId}-tab-1`){
@@ -374,4 +381,42 @@ var getChildAge = (id, count) => {
         ageBox[i].style.display = "none";
     }
     
+}
+
+function slideOne(){
+    let sliderOne = document.getElementById("p-slider-1");
+    let sliderTwo = document.getElementById("p-slider-2");
+    let displayValOne = document.getElementById("p-range-1");
+
+    if((parseInt(sliderTwo.value) - parseInt(sliderOne.value)) <= minGap){
+        sliderOne.value = parseInt(sliderTwo.value) - minGap;
+    }
+    displayValOne.textContent = sliderOne.value;
+    fillColor();
+}
+function slideTwo(){
+    let sliderOne = document.getElementById("p-slider-1");
+    let sliderTwo = document.getElementById("p-slider-2");
+    let displayValTwo = document.getElementById("p-range-2");
+
+    if((parseInt(sliderTwo.value) - parseInt(sliderOne.value)) <= minGap){
+        sliderTwo.value = parseInt(sliderOne.value) + minGap;
+    }
+    displayValTwo.textContent = sliderTwo.value;
+    fillColor();
+}
+function fillColor(){
+    let sliderOne = document.getElementById("p-slider-1");
+    let sliderTwo = document.getElementById("p-slider-2");
+    let sliderMaxVal = document.getElementById("p-slider-1").max;
+    let sliderTrack = document.querySelector(".p-slider-track");
+
+    percent1 = (sliderOne.value / sliderMaxVal)*100;
+    percent2 = (sliderTwo.value / sliderMaxVal)*100;
+    sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}%, #3264fe ${percent1}%, #3264fe ${percent2}%,
+        #dadae5 ${percent2}%)`
+}
+
+function updateTime(value){
+    console.log(value);
 }
