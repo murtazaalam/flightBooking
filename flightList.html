@@ -107,24 +107,28 @@
                                 <h5>Departure Time</h5>
                                 <div class="price-by">
                                     <div class="range-values">
-                                        <p id="range-1">00:00</p>
-                                        <p id="range-2">23:59</p>
+                                        <p id="d-range-1">00:00</p>
+                                        <p id="d-range-2">23:59</p>
                                     </div>
                                     <div class="d-slider-track"></div>
-                                    <input type="range" min="00:00" max="23:59" value="30" id="slider-1" onInput="slideOne()"/>
-                                    <input type="range" min="00:00" max="23:59" value="70" id="slider-2" onInput="slideTwo()"/>
+                                    <input type="range" min="0" max="1439" value="0" id="d-slider-1" 
+                                        onInput="updateTime(value,'departure', 'min')"/>
+                                    <input type="range" min="0" max="1439" value="1439" id="d-slider-2" 
+                                        onInput="updateTime(value,'departure', 'max')"/>
                                 </div>
                             </div>
                             <div>
                                 <h5>Arrival Time</h5>
                                 <div class="price-by">
                                     <div class="range-values">
-                                        <p id="range-1">00:00</p>
-                                        <p id="range-2">23:59</p>
+                                        <p id="a-range-1">00:00</p>
+                                        <p id="a-range-2">23:59</p>
                                     </div>
                                     <div class="a-slider-track"></div>
-                                    <input type="range" min="1" max="23" value="12" id="a-slider-1" onInput="updateTime(value)"/>
-                                    <input type="range" min="0" max="59" value="40" id="slider-2" onInput="updateTime(value)"/>
+                                    <input type="range" min="0" max="1439" value="0" id="a-slider-1" 
+                                        onInput="updateTime(value,'arrival', 'min')"/>
+                                    <input type="range" min="0" max="1439" value="1439" id="a-slider-2" 
+                                        onInput="updateTime(value,'arrival','max')"/>
                                 </div>
                             </div>
                             <div>
@@ -135,8 +139,8 @@
                                         <p id="p-range-2">100</p>
                                     </div>
                                     <div class="p-slider-track"></div>
-                                    <input type="range" min="0" max="100" value="30" id="p-slider-1" onInput="slideOne()"/>
-                                    <input type="range" min="0" max="100" value="70" id="p-slider-2" onInput="slideTwo()"/>
+                                    <input type="range" min="0" max="100" value="0" id="p-slider-1" onInput="slideOne()"/>
+                                    <input type="range" min="0" max="100" value="100" id="p-slider-2" onInput="slideTwo()"/>
                                 </div>
                             </div>
                         </div>

@@ -7,6 +7,8 @@ let minGap = 0;
 window.onload = function() {
     slideOne();
     slideTwo();
+    updateTime(0,"arrival", "min");
+    updateTime(0,"departure", "min")
 }
 var swap = (flight) =>{
     if(flight == "flight-search"){
@@ -531,7 +533,7 @@ function slideOne(){
         sliderOne.value = parseInt(sliderTwo.value) - minGap;
     }
     displayValOne.textContent = sliderOne.value;
-    fillColor();
+    fillColor("p");
 }
 function slideTwo(){
     let sliderOne = document.getElementById("p-slider-1");
@@ -542,13 +544,14 @@ function slideTwo(){
         sliderTwo.value = parseInt(sliderOne.value) + minGap;
     }
     displayValTwo.textContent = sliderTwo.value;
-    fillColor();
+    fillColor("p");
 }
-function fillColor(){
-    let sliderOne = document.getElementById("p-slider-1");
-    let sliderTwo = document.getElementById("p-slider-2");
-    let sliderMaxVal = document.getElementById("p-slider-1").max;
-    let sliderTrack = document.querySelector(".p-slider-track");
+function fillColor(type){
+
+    let sliderOne = document.getElementById(`${type}-slider-1`);
+    let sliderTwo = document.getElementById(`${type}-slider-2`);
+    let sliderMaxVal = document.getElementById(`${type}-slider-1`).max;
+    let sliderTrack = document.querySelector(`.${type}-slider-track`);
 
     percent1 = (sliderOne.value / sliderMaxVal)*100;
     percent2 = (sliderTwo.value / sliderMaxVal)*100;
@@ -556,6 +559,54 @@ function fillColor(){
         #dadae5 ${percent2}%)`
 }
 
-function updateTime(value){
-    console.log(value);
+function updateTime(value, type, valueType){
+    
+    if(type == "arrival" && valueType == "min"){
+
+        let sliderOne = document.getElementById("a-slider-1");
+        let sliderTwo = document.getElementById("a-slider-2");
+        if((parseInt(sliderTwo.value) - parseInt(sliderOne.value)) <= minGap){
+            sliderOne.value = parseInt(sliderTwo.value) - minGap;
+        }
+
+        let hr = Math.floor(sliderOne.value/60);
+        let min = sliderOne.value % 60;
+        document.getElementById("a-range-1").innerHTML = `${hr}:${min}`;
+        fillColor("a");
+        
+    }
+    if(type == "arrival" && valueType == "max"){
+
+        let sliderOne = document.getElementById("a-slider-1");
+        let sliderTwo = document.getElementById("a-slider-2");
+        if((parseInt(sliderTwo.value) - parseInt(sliderOne.value)) <= minGap){
+            sliderTwo.value = parseInt(sliderOne.value) + minGap;
+        }
+        let hr = Math.floor(sliderTwo.value/60);
+        let min = sliderTwo.value % 60;
+        document.getElementById("a-range-2").innerHTML = `${hr}:${min}`;
+        fillColor("a");
+    }
+    if(type == "departure" && valueType == "min"){
+        let sliderOne = document.getElementById("d-slider-1");
+        let sliderTwo = document.getElementById("d-slider-2");
+        if((parseInt(sliderTwo.value) - parseInt(sliderOne.value)) <= minGap){
+            sliderOne.value = parseInt(sliderTwo.value) - minGap;
+        }
+        let hr = Math.floor(sliderOne.value/60);
+        let min = sliderOne.value % 60;
+        document.getElementById("d-range-1").innerHTML = `${hr}:${min}`;
+        fillColor("d");
+    }
+    if(type == "departure" && valueType == "max"){
+        let sliderOne = document.getElementById("d-slider-1");
+        let sliderTwo = document.getElementById("d-slider-2");
+        if((parseInt(sliderTwo.value) - parseInt(sliderOne.value)) <= minGap){
+            sliderTwo.value = parseInt(sliderOne.value) + minGap;
+        }
+        let hr = Math.floor(sliderTwo.value/60);
+        let min = sliderTwo.value % 60;
+        document.getElementById("d-range-2").innerHTML = `${hr}:${min}`;
+        fillColor("d");
+    }
 }
